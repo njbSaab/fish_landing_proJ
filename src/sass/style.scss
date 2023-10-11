@@ -1,38 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat+Alternates:wght@100;200;300;400&display=swap');
 @import 'libs/bootstrap';
 @import 'base/variables';
 @import 'base/mixins';
 
 * {
-  font-family: 'Roboto', sans-serif;
-  
+ font-family: 'Arimo', sans-serif;
 }
 
 body {
-  background-color: gray;
+ background-color: $main-bg-color;
+ font-family: 'Arimo', sans-serif;
 }
 
 h1 {
-  margin-bottom: 0;
+ margin-bottom: 0;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+ padding: 0;
+ margin: 0;
+ list-style: none;
 }
-
+a {
+ color: inherit;
+}
+p {
+ padding: 0;
+ margin: 0;
+}
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 15px;
+}
+.title {
+ padding: 78px 0;
+}
+.nj-h1 {
+ font-size: 96px;
+ color: $second-title-color;
+ font-weight: 700;
+ letter-spacing: -4px;
+ text-transform: capitalize;
+ line-height: 86px;
+}
+.nj-h2 {
+ font-size: 52px;
+ color: $base-text-color;
+ font-weight: 400;
+ text-transform: initial;
+ line-height: 20px;
+}
+.nj-h3 {
+ font-size: 32px;
+ color: $base-text-color;
+ font-weight: 400;
+ text-transform: initial;
+ line-height: 20px;
+}
+.nj-h4 {
+ color: $base-text-color;
+ text-align: center;
+ font-size: 28px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+}
+.nj-h5 {
+ color: $base-text-color;
+ text-align: center;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+}
+.p-list {
+ font-size: 19px;
+ color: $main-title-color;
+ font-weight: 700;
+ text-align: justify;
+}
+.p-item-text {
+ font-size: 13px;
+ color: $second-text-color;
+ font-weight: 400;
+ text-align: left;
+}
+.text-blue {
+ color: $main-title-color;
+}
+.text-yellow {
+ color: $second-title-color;
+}
+.text-gray {
+ color: $second-text-color;
+}
+.img_wrapper {
+ width: 100%;
+ img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0;
+ }
+}
+.btn_regular{
+    border-radius: 30px;
+    border: 1px solid $main-title-color;
+    color: $main-bg-color;
+    background: $main-title-color;
+    font-size: 15px;
+    padding: 15px 0px;
+}
+.btn_transparetn_bg{
+  border-radius: 30px;
+  border: 1px solid $main-title-color;
+  color: $main-title-color;
+  background: #fff;
+  font-size: 15px;
+  padding: 15px 0px;
+}
+.btn_wrapper_regular{
+  display: block;
+  width: 100%;
 }
 
-
-
+@import 'media/media';
 @import 'blocks/header';
 @import 'blocks/footer';
 @import 'components/breadcrumbs';
-
-
-
+@import 'components/_burger';
