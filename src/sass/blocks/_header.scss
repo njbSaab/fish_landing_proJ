@@ -90,18 +90,18 @@
    transition: transform 0.5s ease;
    overflow-y: scroll;
 
-   ul{
+   ul {
     display: flex;
     flex-direction: column;
     gap: 30px;
     border-bottom: 1px solid $border-color;
     padding-bottom: 25px;
-    a{
-        font-size: 21px;
-        color: $main-title-color;
+    a {
+     font-size: 21px;
+     color: $main-title-color;
     }
    }
-   .mobile_menu_contacts{
+   .mobile_menu_contacts {
     padding: 32px 0 50px;
    }
    .icon_cancel {
@@ -122,10 +122,13 @@
      transition: 0.3s ease;
     }
    }
-   .btn-wrapper-regular{
+   .btn_wrapper_regular {
     display: flex;
-    flex-direction: column;
     gap: 21px;
+    width: 100%;
+    button {
+     flex: 0 1 50%;
+    }
    }
    .work {
     display: flex;
@@ -172,5 +175,16 @@
   z-index: 99;
  }
  .header.active {
+ }
+}
+
+@media (max-width: 500px) {
+ .header {
+  .mobile_menu {
+   .btn_wrapper_regular {
+    flex-direction: column;
+    width: 100%;
+   }
+  }
  }
 }
