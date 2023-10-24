@@ -1,2 +1,29 @@
 .footer {
+    background: $main-title-color;
+    .footer_wrapper{
+        .footer_columns{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 220px 15px;
+            display: flex;
+            justify-content: space-between;
+            color: $main-bg-color;
+        }
+        .footer_map{
+            background: $main-bg-color;
+            iframe{
+                width: 100%;
+
+            }
+        }
+        .footer_bottom{
+            background: $main-bg-color;
+            text-align: center;
+            padding: 20px 0;
+            h5{
+                color: $main-title-color;
+                font-weight: normal;
+            }
+        }
+    }
 }

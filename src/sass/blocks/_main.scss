@@ -1,0 +1,154 @@
+.main_page {
+	padding: 100px 0 250px;
+	background: $main-bg-color;
+	&_wrapper {
+		display: flex;
+		.title_box {
+			line-height: 86px;
+			letter-spacing: -4px;
+			z-index: 1;
+			position: relative;
+			h1 {
+				position: relative;
+			}
+			ul {
+				li {
+					font-size: 64px;
+					z-index: 1;
+					position: relative;
+				}
+			}
+			&::after {
+				content: 'YENTO';
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #e3e3e3;
+				font-size: 300px;
+				font-weight: 700;
+				opacity: 0.21;
+				z-index: 0;
+				font-feature-settings:
+					'clig' off,
+					'liga' off;
+			}
+			&::before {
+				content: 'YENTO';
+				position: absolute;
+				bottom: 0;
+				right: -40%;
+				color: #c4c4c4;
+				font-size: 100px;
+				font-weight: 700;
+				opacity: 0.21;
+				z-index: 0;
+				font-feature-settings:
+					'clig' off,
+					'liga' off;
+			}
+		}
+		.content_text {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: end;
+			padding-right: 120px;
+			gap: 16px;
+			.text {
+				width: 100%;
+				max-width: 700px;
+				z-index: 1;
+				p {
+					font-size: 16px;
+					line-height: 27px;
+					text-transform: capitalize;
+					padding: 0 0px 16px 0;
+				}
+				button {
+					width: 100%;
+					// display: block;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.main_page {
+		padding: 50px 0 150px;
+	}
+	.main_page_wrapper {
+		.title_box {
+			&::before {
+				font-size: 100px;
+				bottom: -10%;
+				right: -40%;
+			}
+
+			&::after {
+				font-size: 225px;
+			}
+			h1 {
+				font-size: 64px;
+				line-height: 64px;
+			}
+
+			ul {
+				li {
+					font-size: 44px;
+					line-height: 64px;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.main_page {
+		padding: 0 0 50px;
+		.main_page_wrapper {
+			flex-direction: column;
+			gap: 40px;
+			.title_box {
+				margin: 0 auto;
+				&::after {
+					top: 10%;
+				}
+				&::before {
+					left: 0;
+					top: 70%;
+					font-size: 150px;
+				}
+				h1 {
+					font-size: 94px;
+					line-height: 86px;
+				}
+
+				ul {
+					li {
+						font-size: 64px;
+						line-height: 86px;
+					}
+				}
+			}
+
+			.content_text {
+				padding: 0;
+				.text {
+					max-width: 380px;
+					width: 100%;
+					margin: 0 auto;
+				}
+				button {
+					width: 90%;
+					margin: 0;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 769px) {
+	.title_box {
+		width: fit-content !important;
+	}
+}

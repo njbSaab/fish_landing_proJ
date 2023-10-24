@@ -1,0 +1,45 @@
+$total-items: 15;
+
+.about_items{
+    width: 100%;
+    margin: 0 0 10px 20px;
+    
+    li{
+        color: $second-text-color;
+        position: relative;
+        display: block;
+        padding: 5px;
+        text-align: left;
+        animation: fadeIn 0.5s linear;
+        animation-fill-mode: both;
+        border-radius: 20px;
+        list-style: disc;
+        &::before{
+          position: absolute;
+          content: '✓';
+          width: 10px;
+          height: 10px;
+          left: -10px;
+        }
+    }
+}
+
+@for $i from 1 through $total-items {
+    li:nth-child(#{$i}) {
+        animation-delay: (.25s * $i) + .5s;  // added 700ms to the delay
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+    75% {
+        opacity: 0.5;
+        top: 0px;
+    }
+    100% {
+        opacity: 1;
+    }
+}

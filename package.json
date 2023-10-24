@@ -1,36 +1,36 @@
 {
- "name": "ecoculture",
- "version": "1.0.0",
- "description": "",
- "main": "index.js",
- "scripts": {
-  "start": "npm run clean && npx gulp",
-  "clean": "npx rimraf dist",
-  "build": "npm run clean && npx gulp build",
-  "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md,css,scss,html}\""
- },
- "author": "Oleksa Antsupov",
- "license": "ISC",
- "devDependencies": {
-  "browser-sync": "^2.29.3",
-  "gulp": "^4.0.2",
-  "gulp-autoprefixer": "^8.0.0",
-  "gulp-clean-css": "^4.3.0",
-  "gulp-cli": "^2.3.0",
-  "gulp-concat-css": "^3.1.0",
-  "gulp-htmlmin": "^5.0.1",
-  "gulp-imagemin": "^8.0.0",
-  "gulp-nunjucks-render": "^2.2.3",
-  "gulp-rename": "^2.0.0",
-  "gulp-sass": "^5.1.0",
-  "prettier": "3.0.3",
-  "sass": "^1.63.6"
- },
- "dependencies": {
-  "animate.css": "^4.1.1",
-  "bootstrap": "^4.6.2",
-  "gulp-sourcemaps": "^3.0.0",
-  "jquery": "^3.7.0",
-  "swiper": "^9.4.1"
- }
+	"name": "ecoculture",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "npm run clean && npx gulp",
+		"clean": "npx rimraf dist",
+		"build": "npm run clean && npx gulp build",
+		"format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md,css,scss,html}\""
+	},
+	"author": "Oleksa Antsupov",
+	"license": "ISC",
+	"devDependencies": {
+		"browser-sync": "^2.29.3",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-cli": "^2.3.0",
+		"gulp-concat-css": "^3.1.0",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-nunjucks-render": "^2.2.3",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.1.0",
+		"prettier": "3.0.3",
+		"sass": "^1.63.6"
+	},
+	"dependencies": {
+		"animate.css": "^4.1.1",
+		"bootstrap": "^4.6.2",
+		"gulp-sourcemaps": "^3.0.0",
+		"jquery": "^3.7.0",
+		"swiper": "^9.4.1"
+	}
 }

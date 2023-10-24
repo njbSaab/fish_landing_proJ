@@ -1,0 +1,15 @@
+.about-slider{
+    flex: 0 1 45%;
+    .swiper{
+        width: 650px;
+        height: 650px;
+        .swiper-pagination {
+            .swiper-pagination-bullet{
+                background: white;
+                &-active{
+                    background: $main-title-color;
+                }
+            }
+        }
+    }
+}
