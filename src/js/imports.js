@@ -6,6 +6,3 @@ import './components/fishes-animation.js';
 import './components/header-hide.js';
 import './components/animations-scroll.js';
 import './components/animation-list.js';
-
-
-

@@ -10,7 +10,7 @@ $(document).ready(function () {
 				maxHeight: '0',
 				'padding-top': '0px',
 				'padding-bottom': '0px',
-				'background-color': 'inherit'
+				'background-color': 'inherit',
 			});
 			$(this).removeClass('opened');
 		} else {
@@ -19,7 +19,6 @@ $(document).ready(function () {
 				'padding-top': panel.hasClass('child-panel') ? '10px' : '0px',
 				'padding-bottom': panel.hasClass('child-panel') ? '10px' : '0px',
 				'background-color': panel.hasClass('child-panel') ? 'white' : 'inherit',
-
 			});
 			$(this).addClass('opened');
 		}
@@ -67,18 +66,16 @@ $(document).ready(function () {
 	}, 6000); // 4 seconds
 });
 
+// Automatically open the firstPanel after 1 second
+// setTimeout(function() {
+//     var firstPanel = $(".panel.first-panel");
+//     var paddingOffsetForFirst = firstPanel.hasClass("child-panel") ? 20 : 0;
 
+//     firstPanel.css({
+//         "maxHeight": firstPanel.prop("scrollHeight") + paddingOffsetForFirst + "px",
+//         "padding-top": firstPanel.hasClass("child-panel") ? "10px" : "0px",
+//         "padding-bottom": firstPanel.hasClass("child-panel") ? "10px" : "0px"
+//     });
 
-	// Automatically open the firstPanel after 1 second
-	// setTimeout(function() {
-	//     var firstPanel = $(".panel.first-panel");
-	//     var paddingOffsetForFirst = firstPanel.hasClass("child-panel") ? 20 : 0;
-
-	//     firstPanel.css({
-	//         "maxHeight": firstPanel.prop("scrollHeight") + paddingOffsetForFirst + "px",
-	//         "padding-top": firstPanel.hasClass("child-panel") ? "10px" : "0px",
-	//         "padding-bottom": firstPanel.hasClass("child-panel") ? "10px" : "0px"
-	//     });
-
-	//     firstPanel.prev(".accordion").addClass("opened");
-	// }, 300);  // 1 second
+//     firstPanel.prev(".accordion").addClass("opened");
+// }, 300);  // 1 second

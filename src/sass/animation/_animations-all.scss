@@ -1,16 +1,15 @@
- 
 // li:has(svg) {
 // 	opacity: 0;
 // 	transform: translateX(-20px);
 // 	animation: moveInRight 0.5s ease-in-out forwards;
 //   }
-  
+
 //   li:has(h5){
 // 	opacity: 0;
 // 	transform: translateY(20px);
 // 	animation: fadeInUp 0.5s ease-in-out forwards;
 //   }
-  
+
 //   li:has(h2) {
 //     transform-origin: center;
 //     animation: rotateIn 0.5s ease;
@@ -36,7 +35,6 @@
 // 	animation: rotateIn 0.5s ease;
 // }
 
-  
 //   @keyframes fadeInUp {
 // 	to {
 // 	  opacity: 1;
@@ -49,5 +47,3 @@
 // 	  transform: translateX(0);
 // 	}
 //   }
-
-

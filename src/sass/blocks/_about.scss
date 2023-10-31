@@ -32,36 +32,39 @@
 	}
 }
 @media only screen and (max-width: 1200px) {
-	.about{
-		.about_wrapper{
+	.about {
+		.about_wrapper {
 			flex-direction: column;
 		}
 	}
 }
-@media only screen and (max-width: 500px){
-	.about{
+@media only screen and (max-width: 500px) {
+	.about {
 		padding: 50px 0;
-		h2{
-			padding-bottom: 30px;
+		h2 {
+			padding-bottom: 20px;
 		}
-		.about_wrapper{
+		.about_wrapper {
 			flex-direction: column;
-			h5{
+			gap: 20px;
+			h5 {
 				font-size: 17px;
-
 			}
-			p{
+			p {
 				font-size: 12px;
 				text-wrap: balance;
 			}
-			ul{
+			ul {
 				margin: 0 0 0 10px;
-				li{
+				li {
 					font-size: 12px;
 				}
 			}
-			.nj-h6{
+			.nj-h6 {
 				font-size: 15px;
+			}
+			.about-slider {
+				padding-bottom: 0;
 			}
 		}
 	}

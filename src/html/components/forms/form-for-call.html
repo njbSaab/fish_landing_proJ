@@ -1,6 +1,5 @@
-<div class="form_call">
-	<span class="background-opacity"></span>
-	<div class="form_wrapper">
+<form action="" class="form form_call">
+	<div class="form_call_wrapper">
 		<div class="svg_wrapper icon_cancel">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -23,13 +22,22 @@
 				/>
 			</svg>
 		</div>
-		<h5 class="nj-h5">Замовити дзвінок</h5>
-		<input type="text" placeholder="Ім’я" />
-		<input type="tel" placeholder="Телефон" />
-		<input type="text" placeholder="Коментар" />
+		<h5 class="nj-h5">Вхід</h5>
+		<label for="">
+			<input type="text" placeholder="Ім’я" />
+		</label>
+		<label for="">
+			<input type="number" placeholder="Телефон" />
+		</label>
+		<label for="">
+			<input type="text" placeholder="Коментар" />
+		</label>
 		<div class="btn_wrapper_regular">
-			<button class="btn_regular">Відправити</button>
+			<button type="button" class="btn_regular" data-action="call_after_popup">
+				Відправити
+			</button>
 		</div>
 	</div>
-</div>
-{% include "components/forms/after-submit-form.html" %}
+	{% include "components/forms/after-submit-form.html" %}
+</form>
+<div class="background-opacity" data-action="click-background"></div>

@@ -20,8 +20,8 @@ function peixos() {
 	function peixSalta(peix, reflex, i) {
 		setTimeout(function () {
 			angle = Math.PI - (Math.PI / (fotos / 2)) * i;
-			var x = Math.sin(angle) * 250 + 400;
-			var y = 290 - Math.cos(angle) * 250;
+			var x = Math.sin(angle) * 250 + 400; // Начальное положение x
+			var y = 290 - Math.cos(angle) * 250; // Начальное положение y
 			peix.setAttribute('x', x);
 			peix.setAttribute('y', y);
 			peix.setAttribute(
@@ -29,8 +29,8 @@ function peixos() {
 				'rotate(' + angle * 57.2957795 + ' ' + x + ' ' + y + ')',
 			);
 			angle = Math.PI * 2 + (Math.PI / (fotos / 2)) * i;
-			var x = 400 + Math.sin(angle) * 250;
-			var y = 290 - Math.cos(angle) * 250;
+			var x = 400 + Math.sin(angle) * 250; // Начальное положение x
+			var y = 290 - Math.cos(angle) * 250; // Начальное положение y
 			reflex.setAttribute('x', x);
 			reflex.setAttribute('y', y);
 			reflex.setAttribute(
@@ -45,29 +45,43 @@ function peixos() {
 			peixSalta(peix, reflex, i);
 		}
 		function camviaPropietats(a, i) {
-			setTimeout(function () {
-				a.style.display = 'block';
-			}, 9 * tempsFoto + i * 2);
-			setTimeout(function () {
-				a.style.opacity = 0;
-			}, 9 * tempsFoto + 50 + i * 2);
-			setTimeout(function () {
-				a.style.display = 'none';
-				var currentCx = parseFloat(a.getAttribute('cx'));
-				var newCx = currentCx - 250 * 2;
-				if (newCx < 0) newCx = 0; // Предотвратить отрицательное значение
-				a.setAttribute('cx', newCx);
-				a.style.opacity = 1;
-			}, 9 * tempsFoto + 50 + i * 2 + 200);
-			setTimeout(function () {
-				a.style.display = 'block';
-			}, 27 * tempsFoto + i * 2);
-			setTimeout(function () {
-				a.style.opacity = 0;
-			}, 27 * tempsFoto + 50 + i * 2);
+			setTimeout(
+				function () {
+					a.style.display = 'block';
+				},
+				9 * tempsFoto + i * 2,
+			);
+			setTimeout(
+				function () {
+					a.style.opacity = 0;
+				},
+				9 * tempsFoto + 50 + i * 2,
+			);
+			setTimeout(
+				function () {
+					a.style.display = 'none';
+					var currentCx = parseFloat(a.getAttribute('cx'));
+					var newCx = currentCx - 250 * 2;
+					if (newCx < 0) newCx = 0; // Предотвратить отрицательное значение
+					a.setAttribute('cx', newCx);
+					a.style.opacity = 1;
+				},
+				9 * tempsFoto + 50 + i * 2 + 200,
+			);
+			setTimeout(
+				function () {
+					a.style.display = 'block';
+				},
+				27 * tempsFoto + i * 2,
+			);
+			setTimeout(
+				function () {
+					a.style.opacity = 0;
+				},
+				27 * tempsFoto + 50 + i * 2,
+			);
 		}
-		
-		
+
 		for (i = 0; i < 50; i++) {
 			var a = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 			var x = Math.floor(Math.random() * 100);

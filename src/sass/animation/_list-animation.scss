@@ -16,7 +16,6 @@ $total-items: 15;
 		// border-radius: 20px;
 		// list-style: disc;
 
-
 		&::before {
 			position: absolute;
 			content: '✓';
@@ -27,15 +26,13 @@ $total-items: 15;
 	}
 }
 
-
-
 .about_items li.animate {
 	animation: fadeIn 2s linear;
 	animation-fill-mode: both;
 	border-radius: 20px;
 	list-style: disc;
 	opacity: 1;
-  }
+}
 
 @keyframes fadeIn {
 	0% {

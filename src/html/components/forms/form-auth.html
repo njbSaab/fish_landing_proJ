@@ -1,8 +1,4 @@
-<form
-	class="form_wrapper auth_form_on_page"
-	action="URL_обработчика"
-	method="POST"
->
+<form class="form_wrapper auth_form_on_page">
 	<h5 class="nj-h5">Реєстрація</h5>
 	<label>
 		<input type="text" placeholder="Логін" />
@@ -32,6 +28,8 @@
 		<input type="password" placeholder="Повторіть пароль" />
 	</label>
 	<div class="btn_wrapper_regular">
-		<button class="btn_regular">Авторизуватись</button>
+		<button class="btn_regular" type="button" data-action="after_popup">
+			Авторизуватись
+		</button>
 	</div>
 </form>

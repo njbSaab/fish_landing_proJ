@@ -1,6 +1,6 @@
 .about-slider {
 	flex: 0 1 45%;
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 	.swiper {
 		width: 650px;
 		height: 650px;
@@ -9,10 +9,10 @@
 
 .swiper-pagination {
 	bottom: -100%;
-	span{
+	span {
 		background: white !important;
 	}
-	.swiper-pagination-bullet{
+	.swiper-pagination-bullet {
 		background: white !important;
 		&-active {
 			background: $main-title-color !important;
@@ -20,11 +20,13 @@
 	}
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+	.swiper-pagination-bullet {
 	background: white !important;
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px) {
 	.about-slider {
 		flex: 0 1 45%;
 		padding-bottom: 50px;
@@ -34,11 +36,11 @@
 		}
 	}
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
 	.swiper {
 		width: 100% !important;
 		height: 100%;
-		.swiper-pagination{
+		.swiper-pagination {
 			bottom: 10%;
 		}
 	}

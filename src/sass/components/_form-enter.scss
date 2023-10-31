@@ -30,7 +30,7 @@
 			&::after {
 				content: '';
 				position: absolute;
-				background-image: url('src/img/password.svg');
+				background-image: url('../../img/pass.svg');
 				width: 24px;
 				height: 24px;
 				right: 5px;
@@ -63,9 +63,11 @@
 	.fish_container {
 		height: 80%;
 		z-index: 999;
+		}
+	
 		.fish,
 		.fish-shadow {
-			width: 75%;
+			width: 90%;
 			height: auto;
 			position: absolute;
 			left: 50%;
@@ -89,7 +91,6 @@
 			top: 0;
 			left: 0;
 		}
-
 		.fish-shadow {
 			width: 75%;
 			left: 50%;
@@ -117,8 +118,9 @@
 				}
 			}
 		}
+		
 	}
-}
+
 
 .form_enter.active {
 	display: block;
@@ -162,7 +164,7 @@
 			top: -10%;
 			left: 0;
 			cursor: pointer;
-			z-index: 999;
+			z-index: 1000;
 		}
 	}
 }

@@ -3,17 +3,16 @@ $(document).ready(function () {
 	$('#simply-burger').click(function () {
 		$(this).toggleClass('active');
 		$('.header').toggleClass('active');
-	  
+
 		// Проверяем, есть ли класс 'active' у элемента 'body'
 		if ($('.header').hasClass('active')) {
-		  // Если есть, то отключаем прокрутку
-		  $('body').css('overflow', 'hidden');
+			// Если есть, то отключаем прокрутку
+			$('body').css('overflow', 'hidden');
 		} else {
-		  // Иначе включаем прокрутку
-		  $('body').css('overflow', 'auto');
+			// Иначе включаем прокрутку
+			$('body').css('overflow', 'auto');
 		}
-	  });
-	  
+	});
 
 	// Обработчик событий для кнопки icon_cancel
 	$('.mobile_menu .icon_cancel').click(function () {
@@ -21,29 +20,54 @@ $(document).ready(function () {
 		$('.header').removeClass('active');
 	});
 
-	// Додавання та видалення класу "active" для форми дзвінка
-	$('[data-action="open-form-call"]').click(function () {
-		$('.form_call').addClass('active');
-	});
+	//логіка для форми дзвінка
+	$(document).ready(function () {
+		// Открываем форму при клике на кнопку
+		$('[data-action="open-form-call"]').click(function (event) {
+			event.stopPropagation(); // Остановим всплытие события, чтобы оно не сработало на документе
+			$('.form_call').addClass('active');
+			$('.background-opacity').addClass('active');
+		});
 
-	$('.form_wrapper .icon_cancel').click(function () {
-		$('.form_call').removeClass('active');
-	});
+		// Закрываем форму при клике на крестик
+		$('.form_call_wrapper .icon_cancel').click(function () {
+			closeForm();
+		});
 
-	$('.form_call .background-opacity').click(function () {
-		$('.form_call').removeClass('active');
+		// Добавим обработчик события click для закрытия формы при клике вне неё
+		$(document).on('click', function (event) {
+			if (!$(event.target).closest('.form_call_wrapper').length) {
+				closeForm();
+			}
+		});
+
+		function closeForm() {
+			$('.form_call').removeClass('active');
+			$('.background-opacity').removeClass('active');
+		}
+		// Toggle для класса актив по клику за область либо через 2 секунды
+		$('[data-action="call_after_popup"]').click(function () {
+			console.log('Код сработал');
+			$('.after_popup').addClass('active');
+			console.log('Код сработал');
+			closeForm();
+			console.log('Код сработал');
+			setTimeout(function () {
+				$('.after_popup').removeClass('active');
+			}, 3000); // автоматически удаляем класс active через 3 секунды
+		});
 	});
 
 	$('[data-action="enter-to-b2b"]').click(function () {
 		var $formEnter = $('.form_enter');
-		
+
 		// Переключение класса active
 		$formEnter.toggleClass('active');
-	
+
 		if ($formEnter.hasClass('active')) {
 			// Запуск функции peixos
 			peixos();
-	
+
 			// Заблокировать прокрутку
 			$('body').css('overflow', 'hidden');
 		} else {
@@ -53,7 +77,7 @@ $(document).ready(function () {
 			$('body').css('overflow', 'auto');
 		}
 	});
-	
+
 	$('.cant_remember_btn').click(function () {
 		$('.form').addClass('active');
 		$('.cant_remember_form').addClass('active');
@@ -63,18 +87,12 @@ $(document).ready(function () {
 	});
 
 	//вызываем после клика кнопки отправить в форме after_popup и закрываем форму
-	$('.form_wrapper .btn_regular').click(function () {
+	$('[data-action="after_popup"]').click(function () {
 		$('.after_popup').addClass('active');
-		$('.form_wrapper .icon_cancel').click(); // вызываем событие click для .icon_cancel
 	});
 
-	// Toggle для класса актив по клику за область либо через 2 секунды
-	$('.form_wrapper .btn_regular').click(function () {
-		$('.after_popup').addClass('active');
-		setTimeout(function () {
-			$('.after_popup').removeClass('active');
-		}, 2000); // автоматически удаляем класс active через 3 секунды
-	});
+	// $().click(function (){
+	// })
 
 	// удаляем класс active при клике на элемент
 	$('.after_popup').click(function () {
@@ -94,4 +112,3 @@ $(window).on('click', function (event) {
 		$('.dropdown-content.show').removeClass('show');
 	}
 });
-

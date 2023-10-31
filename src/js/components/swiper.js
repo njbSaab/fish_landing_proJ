@@ -22,25 +22,30 @@ new Swiper('.swiper', {
 
 var swiper = new Swiper('.brands_sliders', {
 	loop: true,
-	spaceBetween: 9,
-	loopAdditionalSlides: 10,
+	slidesPerView: 9,
+	spaceBetween: 10,
 	speed: 4000,
 	freeMode: true,
 	freeModeMomentum: false,
 	freeModeMomentumRatio: 1,
 	autoplay: {
-	  delay: 0,
+		delay: 0,
 	},
 	watchSlidesProgress: true,
 	setWrapperSize: true,
-	breakpoints: {
-	  // Когда ширина экрана <= 500px
-	  500: {
-		slidesPerView: 5,
-		spaceBetween: 2,
-		speed: 6000,
-	  },
-	},
-  });
-  
+});
 
+var swiper = new Swiper('.mobile', {
+	loop: true,
+	slidesPerView: 1,
+	spaceBetween: 10,
+	speed: 6000,
+	freeMode: true,
+	freeModeMomentum: false,
+	freeModeMomentumRatio: 1,
+	autoplay: {
+		delay: 0,
+	},
+	watchSlidesProgress: true,
+	setWrapperSize: true,
+});

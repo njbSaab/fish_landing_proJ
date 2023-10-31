@@ -26,6 +26,9 @@
 				.numbers_box {
 					display: flex;
 					align-items: center;
+					.nj-h2{
+						padding: 0 !important;
+					}
 				}
 			}
 		}
@@ -37,7 +40,6 @@
 			h2 {
 				font-size: 40px;
 				font-weight: 400;
-				padding-bottom: 12px;
 			}
 			p {
 				padding-bottom: 30px;
@@ -70,9 +72,6 @@
 	.numbers_wrapper {
 		flex-direction: column-reverse;
 		align-items: center;
-		h2 {
-			font-size: 30px !important;
-		}
 
 		.numbers_text {
 			align-items: center;
@@ -85,6 +84,34 @@
 				button {
 					width: 90%;
 					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 500px) {
+	h2 {
+		font-size: 24px !important;
+		padding-bottom: 0 !important;
+	}
+	.numbers_wrapper {
+		.numbers_text {
+			p {
+				font-size: 15px;
+			}
+		}
+		.numbers_box {
+			h2 {
+				font-size: 45px !important;
+			}
+		}
+		ul {
+			grid-column-gap: 25px !important;
+			li {
+				align-items: center !important;
+				p {
+					font-size: 15px !important;
+					text-align: center;
 				}
 			}
 		}

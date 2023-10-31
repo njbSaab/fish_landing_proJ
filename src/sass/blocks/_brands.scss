@@ -8,16 +8,31 @@
 		overflow: hidden;
 	}
 }
-@media only screen and (max-width: 500px){
-	.brands{
+
+@media only screen and (min-width: 500px) {
+	.desktop{
+		display: block;
+	}
+	.mobile{
+		display: none;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.brands {
 		padding: 30px 0 50px;
-		.container{
+		.container {
 			padding: 0;
 		}
-		h2{
-			padding-bottom: 30px;
+		h2 {
+			padding-bottom: 30px !important;
 		}
-		.swiper-slide{
+		.desktop{
+			display: none;
+		}
+		.mobile{
+			display: block;
+		}
+		.swiper-slide {
 			width: 150px !important;
 			height: 150px;
 		}

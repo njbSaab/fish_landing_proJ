@@ -1,5 +1,5 @@
 .content_text {
-	.accordion-parent{
+	.accordion-parent {
 		width: 99%;
 	}
 	.accordion {
@@ -37,15 +37,15 @@
 			font-size: 20px;
 		}
 	}
-	.first-panel{
-		border-radius:0 0 20px 20px;
+	.first-panel {
+		border-radius: 0 0 20px 20px;
 	}
 
 	.child-panel {
 		padding: 0 25px;
 		background-color: $main-bg-color;
 		transition: 0.4s ease;
-		border-radius:0 0 20px 20px;
+		border-radius: 0 0 20px 20px;
 	}
 	.title_box {
 		padding-bottom: 10px;
@@ -98,16 +98,16 @@
 	}
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px) {
 	.accordion {
 		width: 99.5% !important;
 	}
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
 	.accordion {
 		width: 98% !important;
 	}
-	.accordion-parent{
+	.accordion-parent {
 		width: 97% !important;
 	}
 }

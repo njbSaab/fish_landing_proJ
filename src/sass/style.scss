@@ -3,14 +3,14 @@
 
 // @import 'libs/bootstrap';
 // @import 'base/mixins';
-:root{
-	accent-color: #009de2
+:root {
+	accent-color: #009de2;
 }
 * {
 	font-family: 'Arimo', sans-serif;
 }
 
-html{
+html {
 	scroll-behavior: smooth;
 }
 body {
@@ -92,6 +92,7 @@ form {
 		font-size: 30px;
 		line-height: 34px;
 		text-align: center;
+		padding-bottom: 30px !important;
 	}
 }
 .nj-h3 {
@@ -172,6 +173,7 @@ form {
 	background: $main-title-color;
 	font-size: 15px;
 	padding: 15px 0px;
+	text-align: center;
 	&:active {
 		background: $btn-regular-active;
 	}
@@ -189,7 +191,7 @@ form {
 	}
 }
 .btn_wrapper_regular {
-	button {
+	.btn_regular {
 		display: block;
 		width: 100%;
 		margin: 0 auto;
@@ -204,8 +206,8 @@ form {
 	height: 30px;
 	border: none;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	&:hover {
 		padding: 3px;
 		background: rgba(255, 0, 0, 0.206);
@@ -249,14 +251,23 @@ form {
 		padding: 10px 0 30px;
 	}
 
+	label{
+		overflow: hidden;
+	}
+
 	input {
 		margin-bottom: 30px;
 		border: none;
 		border-bottom: 2px solid $border-color;
-
+		max-width: 100%;
+		font-size: 17px;
+		width: 100%;
 		&:focus-visible {
 			outline: none;
 			border-bottom: 2px solid $main-title-color;
+		}
+		&:focus-visible::placeholder {
+			color: $main-title-color; 
 		}
 	}
 	.btn_wrapper_regular {
@@ -300,29 +311,28 @@ form {
 	z-index: 9999;
 	transition: width 0.2s;
 }
-section{
-	transition: .3s ease-in;
+section {
+	transition: 0.3s ease-in;
 	transform: translateX(0px);
 	opacity: 1;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	&.hidden{
+	&.hidden {
 		transition: translate 0;
-		transform: translateX(-2000px)
+		transform: translateX(-2000px);
 	}
-	&.opacity{
+	&.opacity {
 		transition: translate 0;
-		opacity: 0
+		opacity: 0;
 	}
 }
-.about{
-		&.hidden{
-		   transform: translateX(-4000px);
-		   opacity: 0
-	   }
+.about {
+	&.hidden {
+		transform: translateX(-4000px);
+		opacity: 0;
+	}
 }
-
 
 //block
 @import 'blocks/header';
