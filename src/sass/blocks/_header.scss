@@ -3,12 +3,22 @@
 	display: flex;
 	width: 100%;
 	background: $main-bg-color;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: .5s ease;
+	z-index: 2;
+	border-bottom: 1px solid $header-border;
 
 	.header_wrapper {
 		display: flex;
 		align-items: center;
 		color: $main-title-color;
 		font-size: 15px;
+		max-width: 1300px;
+		padding: 0 20px;
+		margin: 0 auto;
+		
 
 		.img_wrapper {
 			flex: 0 0 100%;
@@ -116,6 +126,7 @@
 		z-index: 0;
 		transition: all 0.5s ease;
 		overflow-y: scroll;
+		display: none;
 
 		ul {
 			display: flex;
@@ -175,6 +186,7 @@
 	.header {
 		.header_wrapper {
 			justify-content: space-between;
+			width: 100%;
 
 			.header_wrappe_items {
 				display: none;
@@ -192,26 +204,21 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: 100%;
+		height: 100vh;
 		transition: 0.4s ease;
 	}
 
 	.header.active .mobile_menu {
 		transition: all 0.4s ease;
 		left: 0;
-		top: 10%;
-		height: 95%;
+		top: 90%;
+		width: 93%;
+		height: 100vh;
 		z-index: 99;
+		display: block;
 	}
 }
-// @media only screen and (max-width: 1024px) and (max-height: 1366px) {
-//     .mobile_menu {
-//         top: 35% !important;
-//         .mobile_menu_contacts{
-//             padding: 60px 0 !important;
-//         }
-// 	}
-// }
+
 @media only screen and (max-width: 500px) and (min-height: 860px) {
 	.header .mobile_menu .mobile_menu_contacts {
 		padding: 40px 0;
@@ -224,9 +231,30 @@
 	}
 }
 @media only screen and (max-width: 500px) {
-	.mobile_menu {
-		.btn_wrapper_regular {
-			width: 100% !important;
+	.header{
+		padding: 20px 0;
+		img{
+			width: 85% !important;
+		}
+		.mobile_menu {
+			.btn_wrapper_regular {
+				width: 100% !important;
+			}
+		}
+		#simply-burger{
+			width: 44px;
+			height: 23px;
 		}
 	}
+	.mobile_menu{
+		width: 85.5% !important;
+		.mobile_menu_contacts{
+			padding: 40px 0 !important;
+			h5{
+				font-size: 20px !important;
+				padding-bottom: 10px;
+			}
+		}
+	}
+
 }

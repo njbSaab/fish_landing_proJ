@@ -3,9 +3,15 @@
 
 // @import 'libs/bootstrap';
 // @import 'base/mixins';
-
+:root{
+	accent-color: #009de2
+}
 * {
 	font-family: 'Arimo', sans-serif;
+}
+
+html{
+	scroll-behavior: smooth;
 }
 body {
 	background-color: $main-bg-color;
@@ -51,11 +57,6 @@ button {
 	background: transparent;
 	color: inherit;
 	cursor: pointer;
-}
-section {
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
 }
 header,
 footer {
@@ -125,7 +126,7 @@ form {
 	font-weight: 400;
 	line-height: normal;
 }
-.nj-h6{
+.nj-h6 {
 	font-size: 19px;
 	font-style: normal;
 	font-weight: 400;
@@ -152,7 +153,7 @@ form {
 .text-gray {
 	color: $second-text-color;
 }
-.text-bold{
+.text-bold {
 	font-weight: 700;
 }
 .img_wrapper {
@@ -170,7 +171,7 @@ form {
 	color: $main-bg-color;
 	background: $main-title-color;
 	font-size: 15px;
-	padding: 10px 0px;
+	padding: 15px 0px;
 	&:active {
 		background: $btn-regular-active;
 	}
@@ -199,10 +200,17 @@ form {
 	transition: 0.3s ease;
 	padding: 3px;
 	border-radius: 50%;
-
+	width: 30px;
+	height: 30px;
+	border: none;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 	&:hover {
+		padding: 3px;
 		background: rgba(255, 0, 0, 0.206);
 		transition: 0.3s ease;
+		border: none;
 		svg {
 			display: flex;
 			align-items: center;
@@ -266,22 +274,54 @@ form {
 	color: $main-title-color;
 	background: transparent;
 }
-.accordion-list{
+.accordion-list {
 	cursor: pointer;
-	transition: .4s
+	transition: 0.4s;
 }
-.accordion-list_panel{
+.accordion-list_panel {
 	padding: 0 18px;
 	display: none;
 	overflow: hidden;
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
 }
-.accordion-list.acitve .accordion-list_panel{
+.accordion-list.acitve .accordion-list_panel {
 	display: block;
 	max-height: 100px;
 }
 
+#scroll-progress {
+	width: 0;
+	height: 5px;
+	background-color: #009de2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	transition: width 0.2s;
+}
+section{
+	transition: .3s ease-in;
+	transform: translateX(0px);
+	opacity: 1;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	&.hidden{
+		transition: translate 0;
+		transform: translateX(-2000px)
+	}
+	&.opacity{
+		transition: translate 0;
+		opacity: 0
+	}
+}
+.about{
+		&.hidden{
+		   transform: translateX(-4000px);
+		   opacity: 0
+	   }
+}
 
 
 //block
@@ -302,3 +342,4 @@ form {
 @import 'components/form-enter';
 @import 'components/fish-animation';
 @import 'components/slider-about';
+@import 'animation/animations-all';

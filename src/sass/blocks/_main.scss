@@ -1,5 +1,5 @@
 .main_page {
-	padding: 100px 0 250px;
+	padding: 250px 0 250px;
 	background: $main-bg-color;
 	&_wrapper {
 		display: flex;
@@ -18,34 +18,34 @@
 					position: relative;
 				}
 			}
-			&::after {
-				content: 'YENTO';
-				position: absolute;
-				top: 0;
-				left: 0;
-				color: #e3e3e3;
-				font-size: 300px;
-				font-weight: 700;
-				opacity: 0.21;
-				z-index: 0;
-				font-feature-settings:
-					'clig' off,
-					'liga' off;
-			}
-			&::before {
-				content: 'YENTO';
-				position: absolute;
-				bottom: 0;
-				right: -40%;
-				color: #c4c4c4;
-				font-size: 100px;
-				font-weight: 700;
-				opacity: 0.21;
-				z-index: 0;
-				font-feature-settings:
-					'clig' off,
-					'liga' off;
-			}
+			// &::after {
+			// 	content: 'YENTO';
+				// position: absolute;
+				// top: 0;
+				// left: 0;
+				// color: #e3e3e3;
+				// font-size: 300px;
+				// font-weight: 700;
+				// opacity: 0.21;
+				// z-index: 0;
+			// 	font-feature-settings:
+			// 		'clig' off,
+			// 		'liga' off;
+			// }
+			// &::before {
+			// 	content: 'YENTO';
+			// 	position: absolute;
+			// 	bottom: 0;
+			// 	right: -40%;
+			// 	color: #c4c4c4;
+			// 	font-size: 100px;
+			// 	font-weight: 700;
+			// 	opacity: 0.21;
+			// 	z-index: 0;
+			// 	font-feature-settings:
+			// 		'clig' off,
+			// 		'liga' off;
+			// }
 		}
 		.content_text {
 			display: flex;
@@ -68,6 +68,30 @@
 					width: 100%;
 					// display: block;
 				}
+			}
+			.animated-text{
+				position: absolute;
+				top: 30%;
+				left: 5%;
+				color: #e3e3e3;
+				font-size: 300px;
+				font-weight: 700;
+				opacity: 0.21;
+				z-index: 0;
+				display: flex;
+				z-index: 0;
+			}
+			.animated-text-second{
+				position: absolute;
+				bottom: 40%;
+				left: 20%;
+				color: #c4c4c4;
+				font-size: 150px;
+				font-weight: 700;
+				opacity: 0.21;
+				z-index: 0;
+				display: flex;
+				z-index: 0;
 			}
 		}
 	}
@@ -150,5 +174,70 @@
 @media only screen and (max-width: 769px) {
 	.title_box {
 		width: fit-content !important;
+	}
+}
+@media only screen and (max-width: 500px){
+	.main_page{
+		padding: 150px 0 50px;
+		.title_items{
+			li{
+				font-size: 54px !important;
+				line-height: 64px !important;
+			}
+		}
+		.animated-text{
+			font-size: 175px !important;
+			left: 0 !important;
+		}
+		.animated-text-second{
+			font-size: 125px !important;
+			left: 0 !important;
+		}
+	}
+}
+
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideIn 2s linear infinite;
+  }
+  
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(150%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+}
+
+@media only screen and (max-width: 500px){
+	.letter {
+		animation: slideIn 3s linear infinite;
+	  }
+	  
+	  @keyframes slideIn {
+		0% {
+			opacity: 0;
+			transform: translateY(130%);
+		}
+		50% {
+			opacity: 1;
+			transform: translateY(50%);
+		}
+	
+		100% {
+			opacity: 1;
+			transform: translateY(-120%);
+		}
 	}
 }

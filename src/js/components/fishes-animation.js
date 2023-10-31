@@ -45,45 +45,35 @@ function peixos() {
 			peixSalta(peix, reflex, i);
 		}
 		function camviaPropietats(a, i) {
-			setTimeout(
-				function () {
-					a.style.display = 'block';
-				},
-				9 * tempsFoto + i * 2,
-			);
-			setTimeout(
-				function () {
-					a.style.opacity = 0;
-				},
-				9 * tempsFoto + 50 + i * 2,
-			);
-			setTimeout(
-				function () {
-					a.style.display = 'none';
-					a.setAttribute('cx', a.getAttribute('cx') - 250 * 2);
-					a.style.opacity = 1;
-				},
-				9 * tempsFoto + 50 + i * 2 + 200,
-			);
-			setTimeout(
-				function () {
-					a.style.display = 'block';
-				},
-				27 * tempsFoto + i * 2,
-			);
-			setTimeout(
-				function () {
-					a.style.opacity = 0;
-				},
-				27 * tempsFoto + 50 + i * 2,
-			);
+			setTimeout(function () {
+				a.style.display = 'block';
+			}, 9 * tempsFoto + i * 2);
+			setTimeout(function () {
+				a.style.opacity = 0;
+			}, 9 * tempsFoto + 50 + i * 2);
+			setTimeout(function () {
+				a.style.display = 'none';
+				var currentCx = parseFloat(a.getAttribute('cx'));
+				var newCx = currentCx - 250 * 2;
+				if (newCx < 0) newCx = 0; // Предотвратить отрицательное значение
+				a.setAttribute('cx', newCx);
+				a.style.opacity = 1;
+			}, 9 * tempsFoto + 50 + i * 2 + 200);
+			setTimeout(function () {
+				a.style.display = 'block';
+			}, 27 * tempsFoto + i * 2);
+			setTimeout(function () {
+				a.style.opacity = 0;
+			}, 27 * tempsFoto + 50 + i * 2);
 		}
+		
+		
 		for (i = 0; i < 50; i++) {
 			var a = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 			var x = Math.floor(Math.random() * 100);
 			var y = Math.floor(Math.random() * 100);
 			tmp = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-			var w = Math.floor(Math.random() * 5) + 5;
+			w = Math.max(0, 9 - (tmp * 8) / 100);
 			w = 9 - (tmp * 8) / 100;
 			sgn = Math.random() > 0.5 ? 1 : -1;
 			a.setAttribute('cx', 650 + x * sgn);

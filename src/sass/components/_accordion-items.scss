@@ -1,116 +1,113 @@
-.content_text{
-    .accordion {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        transition: .3s ease-out;
-        padding: 10px 5px;
-        border-radius: 20px;
-        width: 99%;
-        margin: 0 auto;
-      }
-      
-    .active, .accordion:hover {
-        background-color: #ccc;
-    }
+.content_text {
+	.accordion-parent{
+		width: 99%;
+	}
+	.accordion {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		width: 100%;
+		text-align: left;
+		border: none;
+		outline: none;
+		transition: 0.3s ease-out;
+		padding: 12px 5px;
+		border-radius: 10px 10px 0 0;
+		width: 98%;
+		margin: 0 auto;
+	}
 
-    .panel {
-        background-color: white;
-        max-height: 0;
-        overflow: hidden;
-        transition: .3s ease-out;
-        text-align: left;
-        border-radius: 20px;
-        
-        .plus{
-            position: relative;
-            &::after{
-                content: '+';
-                position: absolute;
-                color: $base-text-color;
-                font-size: 25px;
-                right: 5%;
-                top: 50%;
-                transform: translateY(-50%) rotate(0deg);
-                transition: .4s ease-out;
+	.active,
+	.accordion:hover {
+		background-color: #ccc;
+	}
 
-            }
-        }
-        .plus.opened{
-            &::after{
-                transform: translateY(-50%) rotate(45deg);
-                transition: .4s ease-out;
-            }
-        }
-    }
+	.panel {
+		background-color: $main-bg-color;
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.3s ease-out;
+		text-align: left;
+		border-radius: 20px;
+		text-align: center;
+	}
 
-    .parent{
-        h5{
-            font-size: 20px;
-        }
-    }
+	.parent {
+		h5 {
+			font-size: 20px;
+		}
+	}
+	.first-panel{
+		border-radius:0 0 20px 20px;
+	}
 
-    .child-panel{
-        padding: 0 25px;
-        transition: .4s ease;
-    }
-    
-    .title_box{
-        padding-bottom: 10px;      
-    }
+	.child-panel {
+		padding: 0 25px;
+		background-color: $main-bg-color;
+		transition: 0.4s ease;
+		border-radius:0 0 20px 20px;
+	}
+	.title_box {
+		padding-bottom: 10px;
+	}
 
-    .arrow {
-        position: relative;
-        &::after {
-            content: "";
-            display: block;
-            background-image: url('../../img/arrow.svg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;        
-            width: 15px;
-            height: 15px;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%) rotate(0deg);
-            z-index: 99;
-            transition: .4s ease;
-        }
-    }
-    .arrow.opened{
-        &::after {
-            transform: translateY(-50%) rotate(180deg);
-            transition: .4s ease;
-        }
-    }
-    
-    .accordeon_item{
-        background: $main-bg-color;
-        border-radius: 20px;
+	.arrow {
+		position: relative;
+		&::after {
+			content: '';
+			display: block;
+			background-image: url('../../img/arrow.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%) rotate(0deg);
+			z-index: 99;
+			transition: 0.4s ease;
+		}
+	}
+	.arrow.opened {
+		&::after {
+			transform: translateY(-50%) rotate(180deg);
+			transition: 0.4s ease;
+		}
+	}
 
-        .accordion{
-            width: 99%;
-            margin: 0 auto;
-            padding: 15px 3px;        
-        }
+	.accordeon_item {
+		background: $main-bg-color;
+		border-radius: 20px;
 
-        .panel{
-            background: transparent;
-        }
-        
-        .last{
-            border-radius: 10px;
-            color: $main-title-color;
-        }
-        .last-panel{
-            p{
-                color: $second-text-color;
-            }
-        }
-    }      
+		.accordion {
+			width: 99%;
+			margin: 0 auto;
+			padding: 15px 3px;
+		}
+		.last {
+			border-radius: 10px 10px 0 0;
+			color: $main-title-color;
+		}
+		.last-panel {
+			p {
+				color: $second-text-color;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px){
+	.accordion {
+		width: 99.5% !important;
+	}
+}
+@media only screen and (max-width: 500px){
+	.accordion {
+		width: 98% !important;
+	}
+	.accordion-parent{
+		width: 97% !important;
+	}
 }

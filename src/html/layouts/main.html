@@ -4,7 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+		/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 		<title>YENTO</title>
@@ -16,6 +20,7 @@
 	</head>
 	<body>
 		{% include "components/header.html" %}
+		<div id="scroll-progress"></div>
 		<main class="content">
 			{% include "pages/main-page.html" %}
 			{% include "pages/about-us.html" %}
@@ -24,16 +29,22 @@
 			{% include "pages/brands.html" %}
 			{%include "pages/authorization.html" %}
 			{%include "pages/numbers.html" %}
+			{%include "pages/conditions.html" %}
+			{%include "pages/blog.html" %}
 		</main>
 
 		{% include "components/forms/form-for-call.html" %} {% include
 		"components/forms/form-enter.html" %} {% include "components/footer.html" %}
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/components/fishes-animation.js"></script>
-		<script src="js/components/accordion-items.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-		<script src="js/components/swiper.js" type="module"></script>
+    <!-- Подключение сторонних библиотек -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>AOS.init();</script>
+
+    <!-- Подключение скриптов -->
+    <script src="js/script.js"></script>
+    <script src="js/imports.js" type="module"></script>
+    <script src="js/components/fishes-animation.js"></script>
 	</body>
 </html>

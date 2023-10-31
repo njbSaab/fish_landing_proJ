@@ -1,0 +1,53 @@
+ 
+// li:has(svg) {
+// 	opacity: 0;
+// 	transform: translateX(-20px);
+// 	animation: moveInRight 0.5s ease-in-out forwards;
+//   }
+  
+//   li:has(h5){
+// 	opacity: 0;
+// 	transform: translateY(20px);
+// 	animation: fadeInUp 0.5s ease-in-out forwards;
+//   }
+  
+//   li:has(h2) {
+//     transform-origin: center;
+//     animation: rotateIn 0.5s ease;
+//   }
+
+/* Анимация для li с svg в секции с классом "scrolled" */
+// section.scrolled li:has(svg) {
+// 	opacity: 0;
+// 	transform: translateX(-20px);
+// 	animation: moveInRight 0.5s ease-in-out forwards;
+// }
+
+/* Анимация для li с h5 в секции с классом "scrolled" */
+// section.scrolled li:has(h5) {
+// 	opacity: 0;
+// 	transform: translateY(20px);
+// 	animation: fadeInUp 0.5s ease-in-out forwards;
+// }
+
+// /* Анимация для li с h2 в секции с классом "scrolled" */
+// section.scrolled li:has(h2) {
+// 	transform-origin: center;
+// 	animation: rotateIn 0.5s ease;
+// }
+
+  
+//   @keyframes fadeInUp {
+// 	to {
+// 	  opacity: 1;
+// 	  transform: translateY(0);
+// 	}
+//   }
+//   @keyframes moveInRight {
+// 	to {
+// 	  opacity: 1;
+// 	  transform: translateX(0);
+// 	}
+//   }
+
+

@@ -3,7 +3,17 @@ $(document).ready(function () {
 	$('#simply-burger').click(function () {
 		$(this).toggleClass('active');
 		$('.header').toggleClass('active');
-	});
+	  
+		// Проверяем, есть ли класс 'active' у элемента 'body'
+		if ($('.header').hasClass('active')) {
+		  // Если есть, то отключаем прокрутку
+		  $('body').css('overflow', 'hidden');
+		} else {
+		  // Иначе включаем прокрутку
+		  $('body').css('overflow', 'auto');
+		}
+	  });
+	  
 
 	// Обработчик событий для кнопки icon_cancel
 	$('.mobile_menu .icon_cancel').click(function () {
@@ -25,15 +35,25 @@ $(document).ready(function () {
 	});
 
 	$('[data-action="enter-to-b2b"]').click(function () {
-		$('.form_enter').toggleClass('active');
-
-		if ($('.form_enter').hasClass('active')) {
+		var $formEnter = $('.form_enter');
+		
+		// Переключение класса active
+		$formEnter.toggleClass('active');
+	
+		if ($formEnter.hasClass('active')) {
+			// Запуск функции peixos
 			peixos();
+	
+			// Заблокировать прокрутку
+			$('body').css('overflow', 'hidden');
 		} else {
+			// Если класс active убран, остановить анимацию и разблокировать прокрутку
 			clearTimeout(peixosInterval);
 			isAnimating = false; // Остановить анимацию
+			$('body').css('overflow', 'auto');
 		}
 	});
+	
 	$('.cant_remember_btn').click(function () {
 		$('.form').addClass('active');
 		$('.cant_remember_form').addClass('active');
@@ -48,7 +68,7 @@ $(document).ready(function () {
 		$('.form_wrapper .icon_cancel').click(); // вызываем событие click для .icon_cancel
 	});
 
-	//Toggle для класса актив по клику за область либо через 2 секунды
+	// Toggle для класса актив по клику за область либо через 2 секунды
 	$('.form_wrapper .btn_regular').click(function () {
 		$('.after_popup').addClass('active');
 		setTimeout(function () {
@@ -74,15 +94,4 @@ $(window).on('click', function (event) {
 		$('.dropdown-content.show').removeClass('show');
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
 
