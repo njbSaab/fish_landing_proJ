@@ -1,0 +1,159 @@
+.btn-text {
+	background-color: $main-bg-color;
+
+	button {
+		position: relative;
+		padding: 15px 20px;
+		border: 1px solid $main-title-color;
+		background: none;
+		cursor: pointer;
+
+		font-family: inherit;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px;
+		color: $main-bg-color;
+
+		background-color: $main-title-color;
+		box-shadow: $main-title-color-opacity 2px 2px 22px;
+		border-radius: 30px;
+		z-index: 0;
+		position: relative;
+		overflow: hidden;
+
+		.right,
+		.left {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+		}
+		.right {
+			left: 66%;
+		}
+		.left {
+			right: 66%;
+		}
+		.right::after {
+			width: 100%;
+			top: -30px;
+			left: calc(-66% - 20px);
+
+			background-color: $main-bg-color;
+			color: transparent;
+			transition: transform 0.4s ease-out;
+			transform: translate(0, -90%) rotate(0deg);
+		}
+	}
+
+	button::after {
+		content: 'Зареєструватись';
+		color: $main-bg-color;
+		font-size: 20px;
+		font-weight: 700;
+		position: absolute;
+		top: -70px;
+		left: 50%;
+		transform: translateX(-50%);
+		transition: 0.2s ease;
+		font-family: inherit;
+	}
+
+	button:hover::after {
+		top: -24px;
+		transition: 0.2s linear;
+	}
+	button:active {
+		background: $main-title-color-opacity;
+	}
+
+	.right::after,
+	button::after {
+		content: var(--content);
+		display: block;
+		position: absolute;
+		white-space: nowrap;
+		padding: 40px 40px;
+		pointer-events: none;
+	}
+	button:hover .right::after {
+		transform: translate(0, -57%) rotate(0deg);
+	}
+
+	button .right:hover::after {
+		transform: translate(0, -57%) rotate(-7deg);
+	}
+
+	button .left:hover ~ .right::after {
+		transform: translate(0, -57%) rotate(7deg);
+	}
+	/* bubbles */
+	button::before {
+		content: '';
+		pointer-events: none;
+		opacity: 0.6;
+		background: radial-gradient(
+				circle at 20% 35%,
+				transparent 0,
+				transparent 2px,
+				$main-bg-color 3px,
+				$main-bg-color 4px,
+				transparent 4px
+			),
+			radial-gradient(
+				circle at 75% 64%,
+				transparent 0,
+				transparent 2px,
+				$main-bg-color 3px,
+				$main-bg-color 4px,
+				transparent 4px
+			),
+			radial-gradient(
+				circle at 35% 44%,
+				transparent 0,
+				transparent 2px,
+				$main-bg-color 3px,
+				$main-bg-color 4px,
+				transparent 4px
+			),
+			radial-gradient(
+				circle at 46% 52%,
+				transparent 0,
+				transparent 4px,
+				$main-bg-color 5px,
+				$main-bg-color 6px,
+				transparent 6px
+			),
+			radial-gradient(
+				circle at 62% 22%,
+				transparent 0,
+				transparent 4px,
+				$main-bg-color 5px,
+				$main-bg-color 6px,
+				transparent 6px
+			),
+			radial-gradient(
+				circle at 76% 42%,
+				transparent 0,
+				transparent 4px,
+				$main-bg-color 5px,
+				$main-bg-color 6px,
+				transparent 6px
+			);
+
+		width: 100%;
+		height: 300%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		animation: bubbles 5s linear infinite both;
+	}
+	@keyframes bubbles {
+		from {
+			transform: translate();
+		}
+		to {
+			transform: translate(0, -66.666%);
+		}
+	}
+}

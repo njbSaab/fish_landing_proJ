@@ -3,7 +3,7 @@
 		width: 99%;
 	}
 	.accordion {
-		background-color: #eee;
+		background-color: $second-bg-color;
 		color: #444;
 		cursor: pointer;
 		width: 100%;
@@ -12,7 +12,7 @@
 		outline: none;
 		transition: 0.3s ease-out;
 		padding: 12px 5px;
-		border-radius: 10px 10px 0 0;
+		border-radius: 20px;
 		width: 98%;
 		margin: 0 auto;
 	}
@@ -23,7 +23,7 @@
 	}
 
 	.panel {
-		background-color: $main-bg-color;
+		background-color: $second-bg-color;
 		max-height: 0;
 		overflow: hidden;
 		transition: 0.3s ease-out;
@@ -38,14 +38,14 @@
 		}
 	}
 	.first-panel {
-		border-radius: 0 0 20px 20px;
+		border-radius: 20px;
 	}
 
 	.child-panel {
 		padding: 0 25px;
-		background-color: $main-bg-color;
+		background-color: $second-bg-color;
 		transition: 0.4s ease;
-		border-radius: 0 0 20px 20px;
+		border-radius: 20px;
 	}
 	.title_box {
 		padding-bottom: 10px;
@@ -78,16 +78,15 @@
 	}
 
 	.accordeon_item {
-		background: $main-bg-color;
+		background-color: $second-bg-color;
 		border-radius: 20px;
 
 		.accordion {
 			width: 99%;
 			margin: 0 auto;
-			padding: 15px 3px;
+			padding: 20px 3px;
 		}
 		.last {
-			border-radius: 10px 10px 0 0;
 			color: $main-title-color;
 		}
 		.last-panel {

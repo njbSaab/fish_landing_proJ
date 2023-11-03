@@ -12,8 +12,8 @@ new Swiper('.swiper', {
 		disableOnInteraction: false,
 	},
 	speed: 700,
-	effect: 'cube',
-	cubeEffect: {
+	effect: 'flip',
+	flip: {
 		slideShadows: true,
 		shadow: true,
 		shadowOffset: 20,

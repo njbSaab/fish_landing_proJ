@@ -10,10 +10,10 @@
 }
 
 @media only screen and (min-width: 500px) {
-	.desktop{
+	.desktop {
 		display: block;
 	}
-	.mobile{
+	.mobile {
 		display: none;
 	}
 }
@@ -26,10 +26,10 @@
 		h2 {
 			padding-bottom: 30px !important;
 		}
-		.desktop{
+		.desktop {
 			display: none;
 		}
-		.mobile{
+		.mobile {
 			display: block;
 		}
 		.swiper-slide {
