@@ -47,11 +47,8 @@ $(document).ready(function () {
 		}
 		// Toggle для класса актив по клику за область либо через 2 секунды
 		$('[data-action="call_after_popup"]').click(function () {
-			console.log('Код сработал');
 			$('.after_popup').addClass('active');
-			console.log('Код сработал');
 			closeForm();
-			console.log('Код сработал');
 			setTimeout(function () {
 				$('.after_popup').removeClass('active');
 			}, 3000); // автоматически удаляем класс active через 3 секунды
@@ -60,14 +57,12 @@ $(document).ready(function () {
 
 	$('[data-action="enter-to-b2b"]').click(function () {
 		var $formEnter = $('.form_enter');
-
+		$('.enter_form').addClass('active');
 		// Переключение класса active
 		$formEnter.toggleClass('active');
-
 		if ($formEnter.hasClass('active')) {
 			// Запуск функции peixos
 			peixos();
-
 			// Заблокировать прокрутку
 			$('body').css('overflow', 'hidden');
 		} else {
@@ -80,10 +75,14 @@ $(document).ready(function () {
 
 	$('.cant_remember_btn').click(function () {
 		$('.form').addClass('active');
+		$('.form').addClass('cant-remember_form');
 		$('.cant_remember_form').addClass('active');
+		$('.enter_form').removeClass('active');
 	});
 	$('.authorization_btn').click(function () {
 		$('.authorization_form').addClass('active');
+		$('.form').addClass('authorization_form');
+		$('.cant_remember_form').removeClass('active');
 	});
 
 	//вызываем после клика кнопки отправить в форме after_popup и закрываем форму
@@ -91,8 +90,9 @@ $(document).ready(function () {
 		$('.after_popup').addClass('active');
 	});
 
-	// $().click(function (){
-	// })
+	$('.password').click(function () {
+		$(this).toggleClass('active');
+	});
 
 	// удаляем класс active при клике на элемент
 	$('.after_popup').click(function () {

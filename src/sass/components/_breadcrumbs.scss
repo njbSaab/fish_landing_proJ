@@ -1,0 +1,24 @@
+.forms_breadcrumb {
+	padding: 50px 0 0 50px;
+	ul {
+		display: flex;
+		align-items: center;
+		li {
+			a {
+				color: $main-bg-color;
+				font-weight: 400;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+			.breadcrumbs_text {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 500px) {
+	.forms_breadcrumb {
+		padding: 25px 0 0 25px;
+	}
+}

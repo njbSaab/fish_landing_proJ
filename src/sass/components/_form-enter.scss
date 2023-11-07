@@ -1,191 +1,133 @@
-// @keyframes fish {
-// 	0%,
-// 	70% {
-// 		opacity: 0;
-// 	}
-// 	100% {
-// 		opacity: 1;
-// 	}
-// }
+.form_enter {
+	display: none;
+	opacity: 0;
+	transition: 0.4s ease;
+	position: absolute;
+	width: 100%;
+	height: calc(100vh - 130px);
+	overflow: hidden;
 
-// .form_enter {
-// 	display: none;
-// 	opacity: 0;
-// 	transition: 0.4s ease;
-// 	background-color: $main-title-color;
-// 	position: absolute;
-// 	width: 100%;
-// 	height: calc(100vh - 130px);
-// 	overflow: hidden;
+	.form_wrapper {
+		position: absolute;
+		z-index: 999;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		&.active {
+			opacity: 1;
+		}
+		.password {
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			right: 0;
+			transition: 0.3s linear;
+			path {
+				fill: #c8c8c8;
+			}
+			&:hover {
+				path {
+					fill: $base-text-color;
+					transition: 0.3s ease;
+				}
+			}
+			&.active {
+				path {
+					transition: 0.1s ease;
+					fill: $base-text-color;
+				}
+			}
+		}
 
-// 	.form_wrapper {
-// 		position: absolute;
-// 		z-index: 999;
-// 		top: 50%;
-// 		left: 50%;
-// 		transform: translate(-50%, -50%);
-// 		.password {
-// 			position: relative;
-// 			padding-right: 30px;
-// 			&::after {
-// 				content: '';
-// 				position: absolute;
-// 				background-image: url('../../img/pass.svg');
-// 				width: 24px;
-// 				height: 24px;
-// 				right: 5px;
-// 				top: 50%;
-// 				transform: translateY(-50%);
-// 			}
-// 		}
-// 		.auth_wrapper {
-// 			display: flex;
-// 			gap: 30px;
-// 			a {
-// 				font-size: 15px;
-// 				text-decoration-line: underline;
-// 				color: $main-title-color;
-// 			}
-// 		}
-// 	}
-// 	.cant_remember_form {
-// 		transform: translate(-50%, -1000px);
-// 	}
-// 	.authorization_form {
-// 		transform: translate(-50%, -1500px);
-// 	}
-// 	.fishes_animation_wrapper {
-// 		position: absolute;
-// 		height: 100vh;
-// 		overflow: hidden;
-// 		z-index: 998;
-// 	}
-// 	.fish_container {
-// 		height: 80%;
-// 		z-index: 999;
-// 	}
+		.auth_wrapper {
+			display: flex;
+			gap: 30px;
+			a {
+				font-size: 15px;
+				text-decoration-line: underline;
+				color: $main-title-color;
+			}
+		}
+	}
+	.cant_remember_form {
+		transform: translate(-50%, -1000px);
+	}
+	.authorization_form {
+		transform: translate(-50%, -1500px);
+	}
+}
 
-// 	.fish,
-// 	.fish-shadow {
-// 		width: 90%;
-// 		height: auto;
-// 		position: absolute;
-// 		left: 50%;
-// 		top: 50%;
-// 		transform: translate(-50%, -50%);
-// 		animation: fish 3s forwards ease-in-out;
-// 		path {
-// 			fill: #fff;
-// 			&:hover {
-// 				fill: $second-title-color;
-// 			}
-// 		}
-// 		.line {
-// 			fill: none;
-// 		}
-// 	}
-// 	.fish-shadow-con {
-// 		opacity: 0.2;
-// 		filter: blur(10px);
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 	}
-// 	.fish-shadow {
-// 		width: 75%;
-// 		left: 50%;
-// 		top: 50%;
-// 		transform: translate(-50%, -50%);
-// 		path {
-// 			fill: #211922;
-// 			&:hover {
-// 				fill: #211922;
-// 			}
-// 		}
-// 	}
-// 	.fish-shadow {
-// 		-webkit-filter: url('#goo');
-// 		filter: url(#goo);
-// 		width: 75%;
-// 		left: 50%;
-// 		top: 50%;
-// 		transform: translate(-50%, -50%);
-// 		opacity: 0.4;
-// 		path {
-// 			fill: rgba(0, 0, 0, 0.2);
-// 			&:hover {
-// 				fill: rgba(0, 0, 0, 0.2);
-// 			}
-// 		}
-// 	}
-// }
+.form_enter.active {
+	display: block;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	height: 100vh;
+	width: 100%;
+	background: $main-title-color;
+	.form {
+		width: 25%;
+		height: 30%;
+	}
+	.form_enter {
+		.form_logo {
+			top: -10%;
+			z-index: 1000;
+		}
+	}
+	.cant_remember_form {
+		.form_logo {
+			top: 0%;
+			z-index: 1000;
+		}
+	}
+	.authorization_form {
+		.form_logo {
+			top: -60%;
+			z-index: 1000;
+		}
+	}
+	.form_wrapper {
+		z-index: 1000;
+	}
+	.cant_remember_form.active {
+		transform: translate(-50%, -50%);
+	}
+}
 
-// .form_enter.active {
-// 	display: block;
-// 	opacity: 1;
-// 	transition: opacity 0.4s ease;
-// 	position: absolute;
-// 	top: 0;
-// 	z-index: 999;
-// 	height: 100vh;
-// 	.form_wrapper {
-// 		z-index: 1000;
-// 	}
-// 	.cant_remember_form.active {
-// 		transform: translate(-50%, -50%);
-// 	}
-// }
+.form_enter.active .form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+}
+.form.active .cant_remember_form ~ .enter_form {
+	opacity: 1;
+	z-index: 999;
+}
+.authorization_form.active {
+	transform: translate(-50%, -50%);
+}
 
-// .form.active .enter_form {
-// 	opacity: 0;
-// 	.authorization_form.active ~ .form_logo {
-// 		top: 20%;
-// 	}
-// }
-
-// .form.active .cant_remember_form ~ .enter_form {
-// 	opacity: 1;
-// 	z-index: 999;
-// }
-// .authorization_form.active {
-// 	transform: translate(-50%, -50%);
-// 	a {
-// 		&::before {
-// 			content: '';
-// 			background-image: url('../../img/yento_logo_b2b.svg');
-// 			background-position: center;
-// 			background-repeat: no-repeat;
-// 			background-size: initial;
-// 			position: absolute;
-// 			height: 10%;
-// 			width: 100%;
-// 			top: -10%;
-// 			left: 0;
-// 			cursor: pointer;
-// 			z-index: 1000;
-// 		}
-// 	}
-// }
-
-// .suportPeix {
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	width: 100%;
-// 	height: 80vh;
-// 	z-index: 999;
-// }
-
-// @media only screen and (max-width: 500px) {
-// 	.form_enter {
-// 		.cant_remember_form.active {
-// 			transform: translate(-50%, -62%);
-// 		}
-// 		.authorization_form.active {
-// 			transform: translate(-50%, -45%);
-// 		}
-// 		.form_logo {
-// 			top: 23%;
-// 		}
-// 	}
-// }
+@media only screen and (max-width: 500px) {
+	.form_enter {
+		.cant_remember_form.active {
+			transform: translate(-50%, -62%);
+		}
+		.authorization_form.active {
+			transform: translate(-50%, -45%);
+		}
+		.authorization_form {
+			.form_logo {
+				top: -90% !important;
+			}
+		}
+	}
+	.suportPeix {
+		display: none;
+	}
+}

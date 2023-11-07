@@ -1,22 +1,25 @@
 $(document).ready(function () {
 	var $listItems = $('.about_items li');
-	var currentIndex = 0;
+	var currentIndex = -2;
 
 	function showNextItem() {
-		if (currentIndex < $listItems.length) {
+		if (currentIndex <= $listItems.length) {
 			$listItems.eq(currentIndex).addClass('animate');
 			currentIndex++;
-			setTimeout(showNextItem, 400); // Показать следующий элемент через 0.4 секунды
-		} else {
-			// Весь список заполнен, начать сначала через 2 секунды
-			setTimeout(function () {
-				$listItems.removeClass('animate');
-				currentIndex = 0;
-				showNextItem(); // Показать первый элемент снова
-			}, 2000);
+			setTimeout(showNextItem, 200); // Показать следующий элемент через 0.4 секунды
+		} 
+	}
+
+// Функция, которая будет вызвана при появлении класса "scrolled"
+	function handleScrollClass() {
+		if ($('.about').hasClass('scrolled')) {
+			showNextItem();
+			// Удаляем обработчик события, чтобы анимация больше не запускалась
+			$('.about').off('DOMSubtreeModified', handleScrollClass);
 		}
 	}
 
-	// Показать первый элемент сразу после загрузки страницы
-	showNextItem();
+// Добавляем обработчик события на изменение DOM-дерева (класса "about")
+	$('.about').on('DOMSubtreeModified', handleScrollClass);
 });
+

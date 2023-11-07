@@ -143,6 +143,9 @@ form {
 	font-weight: 400;
 	text-align: left;
 }
+.postion-relative {
+	position: relative;
+}
 .text-blue {
 	color: $main-title-color;
 }
@@ -231,7 +234,7 @@ form {
 }
 .form_logo {
 	position: absolute;
-	top: 33%;
+	top: -10%;
 	right: 50%;
 	transform: translate(50%, 0);
 	z-index: 999;
@@ -337,6 +340,11 @@ section {
 	}
 }
 
+@media only screen and (max-width: 500px) {
+	.form_logo {
+		top: -35%;
+	}
+}
 //block
 @import 'blocks/header';
 @import 'blocks/main';
@@ -357,4 +365,6 @@ section {
 @import 'components/button-regular';
 @import 'components/button-header-enter';
 @import 'components/slider-about';
+@import 'components/fishes-anim';
+@import 'components/fish-container';
 @import 'animation/animations-all';

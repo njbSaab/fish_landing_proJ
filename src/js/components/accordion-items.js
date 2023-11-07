@@ -61,5 +61,35 @@ $(document).ready(function () {
 
 		// Add 'opened' class to the accordion with class 'last'
 		$('.accordion.last').addClass('opened');
-	}, 6000); // 4 seconds
+	}, 6000); 
+
+	setTimeout(function(){
+		var lastPanel = $('.accordion.last').next('.panel');
+		var paddingOffset = lastPanel.hasClass('child-panel') ? 20 : 0;
+
+		// Set its maxHeight equal to its content height and add padding if it has the class child-panel
+		lastPanel.css({
+			maxHeight: lastPanel.prop('scrollHeight') + paddingOffset + 'px',
+			'padding-top': lastPanel.hasClass('child-panel') ? '10px' : '0px',
+			'padding-bottom': lastPanel.hasClass('child-panel') ? '10px' : '0px',
+		});
+		$('.accordion.last').removeClass('opened');
+	}, 1000)
+	// Close the last accordion after 12 seconds
+	setTimeout(function () {
+		// Find the corresponding panel for the accordion with class 'last'
+		var lastPanel = $('.accordion.last').next('.panel');
+
+		// Reset the maxHeight and remove 'opened' class
+		lastPanel.css({
+			maxHeight: '0',
+			'padding-top': '0',
+			'padding-bottom': '0',
+		});
+
+		$('.accordion.last').removeClass('opened');
+		
+		// Clear the first timeout to prevent it from opening again
+		clearTimeout(lastAccordionTimeout);
+	}, 8000);
 });
