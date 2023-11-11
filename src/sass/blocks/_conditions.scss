@@ -1,0 +1,44 @@
+.conditions{
+    background: $main-bg-color;
+    padding: 85px 0 85px;
+    h2{
+        padding-bottom: 80px;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        li{
+
+            h6{
+                padding-bottom: 5px;
+                font-weight: 500;
+            }
+            p{
+                color: $second-text-color;
+                padding-left: 10px;
+                font-size: 15px;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 769px){
+    .conditions{
+        padding: 35px 0 50px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .conditions{
+        h2{
+            padding-bottom: 30px !important;
+        }
+        li{
+            font-size: 12px;
+            h6{
+                font-size: 15px;
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ $(document).ready(function () {
 	$('#simply-burger').click(function () {
 		$(this).toggleClass('active');
 		$('.header').toggleClass('active');
+		$('.background-opacity')
 
 		// Проверяем, есть ли класс 'active' у элемента 'body'
 		if ($('.header').hasClass('active')) {
@@ -58,6 +59,7 @@ $(document).ready(function () {
 	$('[data-action="enter-to-b2b"]').click(function () {
 		var $formEnter = $('.form_enter');
 		$('.enter_form').addClass('active');
+		$('.form_logo_enter').addClass('active')
 		// Переключение класса active
 		$formEnter.toggleClass('active');
 		if ($formEnter.hasClass('active')) {
@@ -100,15 +102,50 @@ $(document).ready(function () {
 	});
 });
 
-function dropDownsNumberTell() {
-	document.getElementById('myDropdown').classList.toggle('show');
-}
 
-$(window).on('click', function (event) {
-	if (
-		!$(event.target).hasClass('dropbtn') &&
-		!$(event.target).closest('.header_tell').length
-	) {
-		$('.dropdown-content.show').removeClass('show');
-	}
-});
+// function dropDownsNumberTell() {
+//     var dropdown = document.getElementById('myDropdown');
+//     var button = document.querySelector('.dropbtn');
+//     var headerTell = document.querySelector('.header_tell_wrapper'); // Элемент для наведения
+
+//     // Функция для переключения видимости dropdown
+//     function toggleDropdown() {
+//         dropdown.classList.toggle('show');
+//         button.classList.toggle('rotate');
+//     }
+
+//     // Функция для показа dropdown при наведении
+//     function showDropdown() {
+//         dropdown.classList.add('show');
+//         button.classList.add('rotate');
+//     }
+
+//     // Функция для скрытия dropdown при уходе курсора
+//     function hideDropdown() {
+//         dropdown.classList.remove('show');
+//         button.classList.remove('rotate');
+//     }
+
+//     // Обработчик событий для клика
+//     button.addEventListener('click', toggleDropdown);
+
+//     // Обработчики событий для наведения мыши
+//     headerTell.addEventListener('mouseover', showDropdown);
+//     headerTell.addEventListener('mouseout', hideDropdown);
+// }
+
+// // Инициализируем функцию после загрузки страницы
+// window.onload = dropDownsNumberTell;
+
+
+// $(window).on('click', function (event) {
+//     if (
+//         !$(event.target).hasClass('dropbtn') &&
+//         !$(event.target).closest('.header_tell').length
+//     ) {
+//         $('.dropdown-content.show').removeClass('show');
+//     }
+// });
+
+
+

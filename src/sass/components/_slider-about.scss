@@ -4,11 +4,13 @@
 	.swiper {
 		width: 650px;
 		height: 650px;
+		.img_wrapper{
+			max-width: 100%;
+		}
 	}
 }
 
 .swiper-pagination {
-	bottom: -100%;
 	span {
 		background: white !important;
 	}
@@ -23,7 +25,7 @@
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
 	.swiper-pagination-bullet {
-	background: white !important;
+	background: white !important;	
 }
 
 @media only screen and (max-width: 1200px) {
@@ -38,7 +40,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.swiper {
-		width: 100% !important;
+		width: 90% !important;
 		height: 100%;
 		.swiper-pagination {
 			bottom: 10%;

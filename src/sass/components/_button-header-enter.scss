@@ -6,12 +6,12 @@
 		color: $main-title-color;
 		background: #fff;
 		font-size: 15px;
-		padding: 15px 35px !important;
+		padding: 15px 40px !important;
 		outline: none;
 		transition: 0.5s ease-in-out;
 
 		&:active {
-			background: $second-title-color-opacity;
+			box-shadow: $main-title-color 2px 2px 22px;
 		}
 		svg {
 			position: absolute;
@@ -23,8 +23,8 @@
 		}
 		rect {
 			fill: none;
-			stroke: $main-title-color;
-			stroke-width: 1;
+			stroke: $wave-color;
+			stroke-width: 2;
 			stroke-dasharray: 422, 0;
 			-webkit-transition: all 600ms ease;
 			transition: all 600ms ease;
@@ -36,8 +36,8 @@
 		}
 		&:hover rect {
 			stroke-width: 2;
-			stroke-dasharray: 15, 310;
-			stroke-dashoffset: 125;
+			stroke-dasharray: 58,263;
+			stroke-dashoffset: 118;
 			-webkit-transition: all 600ms ease;
 			transition: all 600ms ease;
 			-webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);

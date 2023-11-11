@@ -178,6 +178,9 @@ form {
 	transition: 0.3s ease;
 	&:active {
 		background: $btn-regular-active;
+		box-shadow: $main-title-color 2px 2px 22px;
+		color: $main-title-color-opacity;
+		
 	}
 	&:hover {
 		background: $main-title-color-opacity;
@@ -234,7 +237,6 @@ form {
 }
 .form_logo {
 	position: absolute;
-	top: -10%;
 	right: 50%;
 	transform: translate(50%, 0);
 	z-index: 999;
@@ -317,34 +319,33 @@ form {
 	z-index: 9999;
 	transition: width 0.2s;
 }
-section {
+section,
+footer {
 	transition: 0.3s ease-in;
 	transform: translateX(0px);
 	opacity: 1;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	&.hidden {
-		transition: translate 0;
-		transform: translateX(-2000px);
-	}
-	&.opacity {
-		transition: translate 0;
-		opacity: 0;
-	}
+	// &.hidden {
+	// 	transition: translate 0;
+	// 	transform: translateX(-2000px);
+	// }
+	// &.opacity {
+	// 	transition: translate 0;
+	// 	opacity: 0;
+	// }
 }
-.about {
-	&.hidden {
-		transform: translateX(-4000px);
-		opacity: 0;
-	}
+.parallax{
+	top: 100vh;
 }
+// .about {
+// 	&.hidden {
+// 		transform: translateX(-4000px);
+// 		opacity: 0;
+// 	}
+// }
 
-@media only screen and (max-width: 500px) {
-	.form_logo {
-		top: -35%;
-	}
-}
 //block
 @import 'blocks/header';
 @import 'blocks/main';
@@ -353,6 +354,8 @@ section {
 @import 'blocks/brands';
 @import 'blocks/auth-block';
 @import 'blocks/numbers';
+@import 'blocks/conditions';
+@import 'blocks/blog';
 @import 'blocks/footer';
 //components
 @import 'components/breadcrumbs';

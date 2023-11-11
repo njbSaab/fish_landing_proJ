@@ -1,25 +1,20 @@
-$(document).ready(function () {
-	var $listItems = $('.about_items li');
-	var currentIndex = -2;
+// $(document).ready(function () {
+// 	var $listItems = $('.about_items li');
+// 	var currentIndex = 0; // Изменено с -2 на 0
 
-	function showNextItem() {
-		if (currentIndex <= $listItems.length) {
-			$listItems.eq(currentIndex).addClass('animate');
-			currentIndex++;
-			setTimeout(showNextItem, 200); // Показать следующий элемент через 0.4 секунды
-		} 
-	}
+// 	function showNextItem() {
+// 		if (currentIndex < $listItems.length) {
+// 			$listItems.eq(currentIndex).addClass('animate');
+// 			currentIndex++;
+// 			setTimeout(showNextItem, 200); // Показать следующий элемент через 0.2 секунды
+// 		} 
+// 	}
 
-// Функция, которая будет вызвана при появлении класса "scrolled"
-	function handleScrollClass() {
-		if ($('.about').hasClass('scrolled')) {
-			showNextItem();
-			// Удаляем обработчик события, чтобы анимация больше не запускалась
-			$('.about').off('DOMSubtreeModified', handleScrollClass);
-		}
-	}
-
-// Добавляем обработчик события на изменение DOM-дерева (класса "about")
-	$('.about').on('DOMSubtreeModified', handleScrollClass);
-});
-
+// 	// Используйте событие прокрутки или другой триггер для начала анимации
+// 	$(window).on('scroll', function () {
+// 		if ($('.about').hasClass('scrolled') && currentIndex === 0) { // Проверяем, что анимация не началась
+// 			showNextItem();
+// 			$(window).off('scroll'); // Отключаем обработчик после начала анимации
+// 		}
+// 	});
+// });

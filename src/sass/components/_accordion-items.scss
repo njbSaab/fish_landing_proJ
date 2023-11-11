@@ -4,7 +4,7 @@
 	}
 	.accordion {
 		background-color: $second-bg-color;
-		color: #444;
+		color: $main-title-color;
 		cursor: pointer;
 		width: 100%;
 		text-align: left;
@@ -12,24 +12,19 @@
 		outline: none;
 		transition: 0.3s ease-out;
 		padding: 12px 5px;
-		border-radius: 20px;
 		width: 98%;
 		margin: 0 auto;
 	}
 
-	.active,
-	.accordion:hover {
-		background-color: #ccc;
-	}
-
 	.panel {
-		background-color: $second-bg-color;
+		border: 1px solid $main-title-color-opacity;
+		border-radius: 20px;
 		max-height: 0;
 		overflow: hidden;
 		transition: 0.3s ease-out;
 		text-align: left;
-		border-radius: 20px;
 		text-align: center;
+		font-size: 15px;
 	}
 
 	.parent {
@@ -43,9 +38,14 @@
 
 	.child-panel {
 		padding: 0 25px;
-		background-color: $second-bg-color;
 		transition: 0.4s ease;
 		border-radius: 20px;
+		background-color: $second-bg-color;
+		font-size: 15px;
+		span{
+			font-size: 17px;
+		}
+
 	}
 	.title_box {
 		padding-bottom: 10px;
@@ -91,7 +91,7 @@
 		}
 		.last-panel {
 			p {
-				color: $second-text-color;
+				color: $main-title-color;
 			}
 		}
 	}

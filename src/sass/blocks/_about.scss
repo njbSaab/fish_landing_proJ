@@ -4,11 +4,11 @@
 .about {
 	background: $second-bg-color;
 	padding: 80px 0 120px;
-
+	z-index: 1;
+	top: 100vh;
 	h2 {
 		padding-bottom: 50px;
 	}
-
 	.about_wrapper {
 		display: flex;
 		gap: 90px;
@@ -21,6 +21,8 @@
 			flex: 0 0 40%;
 			h5 {
 				text-align: left;
+				font-size: 22px;
+				text-wrap: balance;
 			}
 		}
 

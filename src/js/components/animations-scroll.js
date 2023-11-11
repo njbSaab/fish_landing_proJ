@@ -1,37 +1,59 @@
 $(document).ready(function () {
-	// Функция для обработки скролла
-	function handleScroll() {
-		var scrollPosition = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		var windowWidth = $(window).width(); // Получаем ширину окна браузера
+    const $window = $(window);
+    const $scrollProgress = $('#scroll-progress');
+    const $listItems = $('.about_items li');
+    let currentIndex = 0;
+    let isAnimationStarted = false;
 
-		// Пройдемся по каждой секции
-		$('main > section').each(function () {
-			var section = $(this);
-			var sectionTop = section.offset().top;
-			var sectionHeight = section.height();
-			var sectionVisibleHeight;
+    $window.scroll(function () {
+        updateScrollProgress();
+        animateListItems();
+        handleSectionVisibility();
+    });
 
-			// Проверим ширину экрана и установим sectionVisibleHeight соответственно
-			if (windowWidth <= 1200) {
-				sectionVisibleHeight = sectionHeight * 0.3;
-			} else if (windowWidth <= 500) {
-				sectionVisibleHeight = sectionHeight * 0.2;
-			} else {
-				sectionVisibleHeight = sectionHeight * 0.5; // 50% высоты секции
-			}
+    // Обновление полосы прогресса прокрутки
+    function updateScrollProgress() {
+        const windowHeight = $window.height();
+        const scrollHeight = $(document).height();
+        const scrollTop = $window.scrollTop();
+        const scrollPercent = (scrollTop / (scrollHeight - windowHeight)) * 100;
+        $scrollProgress.width(scrollPercent + '%');
+    }
 
-			// Проверим, если нужная часть секции видна на экране
-			if (scrollPosition + windowHeight >= sectionTop + sectionVisibleHeight) {
-				section.addClass('scrolled');
-				section.removeClass('opacity hidden');
-			} else {
-				section.removeClass('scrolled');
-			}
-		});
-	}
+    // Анимация элементов списка
+    function animateListItems() {
+        if ($('.about').hasClass('scrolled') && !isAnimationStarted) {
+            isAnimationStarted = true;
 
-	// Вызовем функцию handleScroll при загрузке страницы и при скролле
-	handleScroll();
-	$(window).scroll(handleScroll);
+            function showNextItem() {
+                if (currentIndex < $listItems.length) {
+                    $listItems.eq(currentIndex).addClass('animate');
+                    currentIndex++;
+                    setTimeout(showNextItem, 200);
+                }
+            }
+
+            showNextItem();
+        }
+    }
+
+    // Обработка видимости секций
+    function handleSectionVisibility() {
+        const scrollPosition = $window.scrollTop();
+        const windowHeight = $window.height();
+        const windowWidth = $window.width();
+
+        $('main > section').each(function () {
+            const $section = $(this);
+            const sectionTop = $section.offset().top;
+            const sectionHeight = $section.height();
+            const sectionVisibleHeight = windowWidth <= 1200 ? sectionHeight * 0.2 : sectionHeight * 0.3;
+
+            if (scrollPosition + windowHeight >= sectionTop + sectionVisibleHeight) {
+                $section.addClass('scrolled').removeClass('opacity hidden');
+            } else {
+                $section.removeClass('scrolled');
+            }
+        });
+    }
 });

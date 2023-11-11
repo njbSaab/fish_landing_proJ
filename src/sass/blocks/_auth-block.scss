@@ -2,7 +2,7 @@
 	padding: 100px 0 120px;
 	background: $main-bg-color;
 	h3 {
-		padding-bottom: 75px;
+		padding-bottom: 0px;
 	}
 	.auth_wrapper {
 		display: flex;
@@ -12,7 +12,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-column-gap: 150px;
-			grid-row-gap: 70px;
+			grid-row-gap: 50px;
 			li {
 				display: flex;
 				flex-direction: column;
