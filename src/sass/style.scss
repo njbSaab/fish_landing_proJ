@@ -15,6 +15,7 @@ body {
 	background-color: $main-bg-color;
 	font-family: 'Arimo', sans-serif;
 	margin: 0;
+	overflow: auto;
 }
 h1,
 h2,
@@ -179,11 +180,12 @@ form {
 	&:active {
 		background: $btn-regular-active;
 		box-shadow: $main-title-color 2px 2px 22px;
-		color: $main-title-color-opacity;
-		
+		color: $main-title-color;
+		border: 1px solid $main-title-color-opacity;
 	}
 	&:hover {
 		background: $main-title-color-opacity;
+		color: $main-title-color;
 		transition: 0.3s ease;
 	}
 }
@@ -257,6 +259,9 @@ form {
 	h5 {
 		color: $main-title-color;
 		padding: 10px 0 30px;
+		@media only screen and (max-width: 500px){
+			padding: 10px 0 15px;
+		}
 	}
 
 	label {
@@ -276,6 +281,9 @@ form {
 		}
 		&:focus-visible::placeholder {
 			color: $main-title-color;
+		}
+		@media only screen and (max-width: 500px){
+			margin-bottom: 15px;
 		}
 	}
 	.btn_wrapper_regular {

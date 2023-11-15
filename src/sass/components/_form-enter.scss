@@ -13,6 +13,7 @@
 	}
 	.form_logo{
 		display: none;
+		position: absolute;
 	}
 
 	.form_wrapper {
@@ -54,11 +55,18 @@
 	}
 	.cant_remember_form {
 		transform: translate(-50%, -1000px);
+		.link_btn{
+			text-align: start;
+		}
 	}
 	.authorization_form {
 		transform: translate(-50%, -1500px);
+		.link_btn{
+			text-align: start;
+		}
 	}
 }
+
 .form_enter.active {
 	display: block;
 	opacity: 1;
@@ -70,30 +78,26 @@
 	width: 100%;
 	background: $main-title-color;
 	.form {
-		width: 25%;
-		height: 30%;
+		width: 500px;
+		height: 400px;
 	}
-	.form_logo_enter{
+	.wrapp_form{
+		position: relative;
+		&.cant_remember-wrapp{
+			height: 350px;
+		}
+	}
+
+	.form_logo_enter.active{
 		display: block;
-		top: -20%;
 		z-index: 1000;
+		top: -30px;
 	}
-	.form_logo_auth{
+
+	.form_logo_cant-remember.active{
 		display: block;
-		top: -90%;
-	}
-	
-	.cant_remember_form {
-		.form_logo {
-			top: 0%;
-			z-index: 1000;
-		}
-	}
-	.authorization_form {
-		.form_logo {
-			top: -60%;
-			z-index: 1000;
-		}
+		z-index: 1000;
+		top: -30px;
 	}
 	.form_wrapper {
 		z-index: 1000;
@@ -114,21 +118,17 @@
 	z-index: 999;
 }
 .authorization_form.active {
-	top: -50%;
+	top: -35%;
 	transform: translate(-50%, -50%);
 }
+
 @media only screen and (max-width: 500px) {
 	.form_enter {
 		.cant_remember_form.active {
 			transform: translate(-50%, -62%);
 		}
 		.authorization_form.active {
-			transform: translate(-50%, -45%);
-		}
-		.authorization_form {
-			.form_logo {
-				top: -90% !important;
-			}
+			transform: translate(-50%, -50%);
 		}
 	}
 	.suportPeix {

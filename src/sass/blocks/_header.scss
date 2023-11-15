@@ -132,7 +132,6 @@
 		position: absolute;
 		animation: bubbles 5s linear infinite both;
 	}
-
 	@keyframes bubbles {
 		from {
 			transform: translate();
@@ -303,23 +302,29 @@
 	.burger-align {
 		display: none;
 	}
+	.mobile_wrapp{
+		display: block;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 999;
+	}
 	.mobile_menu {
 		border-radius: 30px 30px 0px 0px;
 		background: $main-bg-color;
 		padding: 20px 23px 0 30px;
 		box-shadow: 4px -3px 4px 0px rgba(0, 0, 0, 0.25);
-		width: 86%;
+		width: 93%;
 		height: 0;
 		display: flex;
 		flex-direction: column;
-		position: absolute;
+		position: fixed;
 		left: 0;
-		top: 120%;
-		z-index: 0;
-		transition: all 0.5s ease;
+		bottom: -100%;
+		z-index: -1;
+		transition: 0.5s linear;
 		overflow-y: scroll;
-		display: none;
-
+		opacity: 0;
 		ul {
 			display: flex;
 			flex-direction: column;
@@ -327,6 +332,16 @@
 			padding-bottom: 25px;
 			li {
 				padding: 10px 0;
+
+				@media only screen and (max-width: 500px){
+					padding: 7.5px 0;
+					@media only screen and (max-width: 375px){
+						padding: 7.5px 0;
+						@media only screen and (max-width: 375px) and (max-height: 700px){
+							padding: 5px 0;
+						}
+					}	
+				}
 			}
 			a {
 				font-size: 21px;
@@ -346,7 +361,7 @@
 			width: 50%;
 		}
 	}
-	.background-opacity {
+	.background-opacity-mobile {
 		background: transparent;
 		position: absolute;
 		top: 0;
@@ -355,6 +370,8 @@
 		right: 0;
 		height: 0;
 		z-index: 0;
+		opacity: 0;
+		transition: opacity .6s ease;
 	}
 	.work {
 		display: flex;
@@ -375,7 +392,7 @@
 	}
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1250px) {
 	.header {
 		.header_wrapper {
 			justify-content: space-between;
@@ -390,63 +407,73 @@
 		}
 	}
 
-	.header.active .background-opacity {
+	.header.active .background-opacity-mobile {
 		background: $second-text-color;
-		z-index: 98;
+		z-index: 1;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 		height: 100vh;
-		transition: 0.4s ease;
-	}
+		transition: opacity 1s ease;
+		opacity: 1;
 
+	}
 	.header.active .mobile_menu {
-		transition: all 0.4s ease;
+		transition: bottom .3s linear;
 		left: 0;
-		top: 90%;
-		width: 93%;
-		height: 100vh;
+		bottom: -5%;
+		width: 95%;
+		height: 95vh;
 		z-index: 99;
-		display: block;
+		display: flex;
+		opacity: 1;
+	}
+}
+@media only screen and (max-width: 768px){
+	.header.active .mobile_menu {
+		width: 93%;
 	}
 }
 
-@media only screen and (max-width: 500px) and (min-height: 860px) {
-	.header .mobile_menu .mobile_menu_contacts {
-		padding: 40px 0;
-	}
-}
 @media only screen and (max-width: 500px) and (max-height: 766px) {
 	.header.active .mobile_menu {
 		height: 100%;
 		padding-bottom: 20px;
 	}
 }
+
 @media only screen and (max-width: 500px) {
 	.header {
 		padding: 20px 0;
 		img {
 			width: 85% !important;
 		}
-		.mobile_menu {
+		.mobile_menu{
+			width: 87% !important;
+			height: 80vh !important;
 			.btn_wrapper_regular {
 				width: 100% !important;
 			}
+			.icon_cancel{
+				width: 15px;
+				height: 15px;
+			}
+			ul{
+				padding-bottom: 5px;
+			}
+			.mobile_menu_contacts {
+				padding: 15px 0 !important;
+				h5 {
+					font-size: 20px !important;
+					padding-bottom: 10px;
+				}
+			 }
 		}
+
 		#simply-burger {
 			width: 44px;
 			height: 23px;
-		}
-	}
-	.mobile_menu {
-		width: 85.5% !important;
-		.mobile_menu_contacts {
-			padding: 40px 0 !important;
-			h5 {
-				font-size: 20px !important;
-				padding-bottom: 10px;
-			}
 		}
 	}
 }

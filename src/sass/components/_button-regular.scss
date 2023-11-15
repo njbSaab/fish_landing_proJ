@@ -65,6 +65,7 @@
 	button:active {
 		background: $main-title-color-opacity;
 		box-shadow: $main-title-color 2px 2px 22px;
+		border: 1px solid $main-title-color-opacity;
 	}
 	button:hover{
 		transition: 0.2s ease;

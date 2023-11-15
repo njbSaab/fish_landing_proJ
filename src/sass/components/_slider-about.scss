@@ -1,15 +1,13 @@
 .about-slider {
 	flex: 0 1 45%;
-	padding-bottom: 100px;
 	.swiper {
-		width: 650px;
-		height: 650px;
+		width: 550px;
+		height: 550px;
 		.img_wrapper{
 			max-width: 100%;
 		}
 	}
 }
-
 .swiper-pagination {
 	span {
 		background: white !important;
@@ -21,13 +19,11 @@
 		}
 	}
 }
-
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
 	.swiper-pagination-bullet {
 	background: white !important;	
 }
-
 @media only screen and (max-width: 1200px) {
 	.about-slider {
 		flex: 0 1 45%;

@@ -1,7 +1,9 @@
 <div class="form_enter">
 	{%include "components/breadcrumbs.html" %} {%include
 	"components/fishes-animation.html" %}
+
 	<div class="form">
+
 		<div class="wrapp_from">
 			<div class="form_logo form_logo_enter">
 				<a href="">
@@ -94,7 +96,7 @@
 					</span>
 				</label>
 				<div class="btn_wrapper_regular">
-					<button class="btn_regular">Авторизуватись</button>
+					<button class="btn_regular" data-action="call_after_popup">Авторизуватись</button>
 				</div>
 				<div class="auth_wrapper">
 					<button type="button" class="link_btn cant_remember_btn">
@@ -106,6 +108,7 @@
 				</div>
 			</form>
 		</div>
+
 		<div class="wrapp_form">
 			<div class="form_logo form_logo_cant-remember">
 				<a href="">
@@ -173,10 +176,10 @@
 					<input type="text" placeholder="Логін" />
 				</label>
 				<div class="btn_wrapper_regular">
-					<button class="btn_regular">Скинути пароль</button>
+					<button class="btn_regular" data-action="call_after_popup">Скинути пароль</button>
 				</div>
-				<button type="button" class="link_btn authorization_btn">
-					Зареєструватись
+				<button type="button" class="link_btn" data-action="back_to_enter">
+					Повернутись
 				</button>
 			</form>
 		</div>
@@ -277,12 +280,19 @@
 				</label>
 	
 				<div class="btn_wrapper_regular">
-					<button class="btn_regular" data-action="after_popup">
+					<button class="btn_regular" data-action="call_after_popup"">
 						Авторизуватись
+					</button>
+				</div>
+				<div class="auth_wrapper">
+					<button type="button" class="link_btn" data-action="back_to_enter">
+						Повернутись
 					</button>
 				</div>
 			</form>
 		</div>
+
 	</div>
+	
 	{%include "components/fish-container.html" %}
 </div>

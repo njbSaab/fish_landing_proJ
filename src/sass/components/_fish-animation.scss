@@ -5,6 +5,7 @@
 	display: none;
 	transition: 0.6s;
 }
+
 [xaf] ellipse {
 	fill: none;
 	stroke: rgba(0, 0, 0, 0.3);
@@ -12,6 +13,16 @@
 	display: none;
 	transition: 0.4s;
 }
+
 .suportPeix {
 	position: fixed;
+}
+
+.fishes_wrapper{
+	width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translate(-50%, 50%);
 }

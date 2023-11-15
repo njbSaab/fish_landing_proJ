@@ -35,7 +35,13 @@
 		}
 	}
 }
-
+@media only screen and (max-width: 1440px){
+	.auth_wrapper {
+		ul {
+			grid-column-gap: 100px !important;
+		}
+	}
+}
 @media only screen and (max-width: 1100px) {
 	.auth_wrapper {
 		ul {

@@ -11,6 +11,7 @@ $(document).ready(function () {
         handleSectionVisibility();
     });
 
+
     // Обновление полосы прогресса прокрутки
     function updateScrollProgress() {
         const windowHeight = $window.height();
@@ -45,6 +46,11 @@ $(document).ready(function () {
 
         $('main > section').each(function () {
             const $section = $(this);
+            // Исключаем header из обработки
+            if ($section.hasClass('header')) {
+                return;
+            }
+
             const sectionTop = $section.offset().top;
             const sectionHeight = $section.height();
             const sectionVisibleHeight = windowWidth <= 1200 ? sectionHeight * 0.2 : sectionHeight * 0.3;

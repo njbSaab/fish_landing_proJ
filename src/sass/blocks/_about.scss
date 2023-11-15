@@ -33,10 +33,19 @@
 		}
 	}
 }
+@media only screen and (max-width: 1440px){
+	.about{
+		.nj-h5 {
+			font-size: 19px !important;
+		}
+		
+	}
+}
 @media only screen and (max-width: 1200px) {
 	.about {
 		.about_wrapper {
 			flex-direction: column;
+			
 		}
 	}
 }
