@@ -1,56 +1,57 @@
-// $(document).ready(function() {
-//     const slider = $('.cards');
-//     const leftArrow = $('.arrows_wrapper_left');
-//     const rightArrow = $('.arrows_wrapper_right');
+$(document).ready(function() {
+    const slider = $('.cards');
+    const leftArrow = $('.arrows_wrapper_left');
+    const rightArrow = $('.arrows_wrapper_right');
 
-//     const cardWidth = slider.find('.card').first().outerWidth(true);
-//     let count = 0;
-//     const maxStep = slider.find('.card').length - 1; // Вычисляем максимальный шаг
+    const cardWidth = slider.find('.card').first().outerWidth(true);
+    let count = 0;
+    const maxStep = slider.find('.card').length - 1; // Вычисляем максимальный шаг
 
-// // Функция для обновления состояния стрелок
-// function updateArrows() {
-//     if(count === 0) {
-//         leftArrow.addClass('active');
-//         rightArrow.removeClass('active');
+// Функция для обновления состояния стрелок
+function updateArrows() {
+    console.log(count);
+    if(count === 0) {
+        leftArrow.addClass('active');
+        rightArrow.removeClass('active');
         
-//     }
-//     if(count >= 1){
-//         leftArrow.addClass('active');
-//         rightArrow.addClass('active');
-//     }
-//     if(count >= 4){
-//         leftArrow.removeClass('active');
-//         rightArrow.addClass('active');
-//         count = 4
-//         slider.find('.card').last().addClass('card-last-margin');
-//     }
-// }
+    }
+    if(count >= 1){
+        leftArrow.addClass('active');
+        rightArrow.addClass('active');
+    }
+    if(count >= 4){
+        leftArrow.removeClass('active');
+        rightArrow.addClass('active');
+        slider.find('.card').last().addClass('card-last-margin');
+        count = 4
+    }
+}
 
-// // Обработчики кликов по стрелкам
-// leftArrow.click(function() {
-//     if (count < maxStep) {
-//         count++;
-//         slider.animate({ scrollLeft: '+=' + cardWidth }, 100);
-//         updateArrows();
-//     }
-// });
+// Обработчики кликов по стрелкам
+leftArrow.click(function() {
+    if (count < maxStep) {
+        count++;
+        slider.animate({ scrollLeft: '+=' + cardWidth }, 100);
+        updateArrows();
+    }
+});
 
-// rightArrow.click(function() {
-//     if (count > 0) {
-//         count--;
-//         slider.animate({ scrollLeft: '-=' + cardWidth }, 100);
-//         updateArrows();
-//     }
-// });
+rightArrow.click(function() {
+    if (count > 0) {
+        count--;
+        slider.animate({ scrollLeft: '-=' + cardWidth }, 100);
+        updateArrows();
+    }
+});
 
-// slider.scroll(function() {
-//     const scrollLeft = slider.scrollLeft();
-//     count = Math.round(scrollLeft / cardWidth);
-//     updateArrows();
-// });
+slider.scroll(function() {
+    const scrollLeft = slider.scrollLeft();
+    count = Math.round(scrollLeft / cardWidth);
+    updateArrows();
+});
 
-// updateArrows();
-// })
+updateArrows();
+})
 
 
 $(document).ready(function() {
@@ -70,7 +71,7 @@ $(document).ready(function() {
         } else if (windowWidth <= 1250) {
             maxStep = 6;
         } else {
-            maxStep = slider.find('.card').length - 1;
+            maxStep = 4;
         }
     }
 
