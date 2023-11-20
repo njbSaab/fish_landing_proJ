@@ -4,6 +4,23 @@
 :root {
 	accent-color: #009de2;
 }
+::-webkit-scrollbar {
+	width: 5px; /* ширина скроллбара */
+	background: transparent; /* фон скроллбара (прозрачный) */
+}
+
+/* Стилизация для тумблера скроллбара */
+::-webkit-scrollbar-thumb {
+	background-color: #009de2; /* цвет тумблера */
+	border-radius: 5px; /* закругление углов */
+}
+
+ul::-webkit-scrollbar-thumb {
+	background-color: transparent; /* цвет тумблера */
+	border-radius: 5px; /* закругление углов */
+}
+/* Стилизация для тумблера при наведении */
+
 * {
 	font-family: 'Arimo', sans-serif;
 }
@@ -63,11 +80,21 @@ footer {
 }
 form {
 	overflow: hidden;
+	@media only screen and (max-height: 600px) {
+		transform: scale(0.9);
+		::-webkit-scrollbar {
+			width: 5px; /* ширина скроллбара */
+			background: transparent; /* фон скроллбара (прозрачный) */
+		}
+	}
 }
 .container {
 	max-width: 1230px;
 	margin: 0 auto;
 	padding: 0 15px;
+	@media only screen and (max-height: 600px) {
+		transform: scale(0.9);
+	}
 }
 .title {
 	padding: 78px 0;
@@ -163,7 +190,7 @@ form {
 	width: 100%;
 	img {
 		height: auto;
-		max-width: 100%;
+		width: 100%;
 		display: block;
 		margin: 0;
 	}
@@ -259,7 +286,7 @@ form {
 	h5 {
 		color: $main-title-color;
 		padding: 10px 0 30px;
-		@media only screen and (max-width: 500px){
+		@media only screen and (max-width: 500px) {
 			padding: 10px 0 15px;
 		}
 	}
@@ -282,7 +309,7 @@ form {
 		&:focus-visible::placeholder {
 			color: $main-title-color;
 		}
-		@media only screen and (max-width: 500px){
+		@media only screen and (max-width: 500px) {
 			margin-bottom: 15px;
 		}
 	}
@@ -344,7 +371,7 @@ footer {
 	// 	opacity: 0;
 	// }
 }
-.parallax{
+.parallax {
 	top: 100vh;
 }
 // .about {

@@ -35,7 +35,7 @@
 		}
 		.right::after {
 			width: 100%;
-			top: -30px;
+			top: -35px;
 			left: calc(-66% - 20px);
 
 			background-color: $main-bg-color;
@@ -59,7 +59,7 @@
 	}
 
 	button:hover::after {
-		top: -24px;
+		top: -25px;
 		transition: 0.2s linear;
 	}
 	button:active {
@@ -67,7 +67,7 @@
 		box-shadow: $main-title-color 2px 2px 22px;
 		border: 1px solid $main-title-color-opacity;
 	}
-	button:hover{
+	button:hover {
 		transition: 0.2s ease;
 	}
 
