@@ -169,7 +169,7 @@
 			.menu_list {
 				display: flex;
 				gap: 20px;
-				a{
+				a {
 					position: relative;
 					padding: 2.5px 5px;
 					z-index: 3;
@@ -185,9 +185,9 @@
 						border-bottom: 3px solid $wave-color;
 						transform: scaleY(2);
 						opacity: 0;
-						transition: .3s;
+						transition: 0.3s;
 						border-radius: 20px;
-					  }
+					}
 					&:after {
 						content: '';
 						position: absolute;
@@ -197,21 +197,21 @@
 						height: 100%;
 						transform: scale(0);
 						opacity: 0;
-						transition: .3s;
+						transition: 0.3s;
 						z-index: -1;
-					  }
+					}
 					&:hover {
 						&:before {
-						  transform: scaleY(1);
-						  opacity: 1;
-						  background: $main-title-color-opacity;
-						  border-radius: 20px;
-						  z-index: -1;
+							transform: scaleY(1);
+							opacity: 1;
+							background: $main-title-color-opacity;
+							border-radius: 20px;
+							z-index: -1;
 						}
 						&:after {
-						  transform: scaleY(1);
-						  opacity: 1;
-						  z-index: -1;
+							transform: scaleY(1);
+							opacity: 1;
+							z-index: -1;
 						}
 					}
 				}
@@ -226,7 +226,7 @@
 					flex-direction: column;
 					position: relative;
 					align-items: center;
-					transition: .4s ease-in;
+					transition: 0.4s ease-in;
 					a {
 						font-size: 21px;
 					}
@@ -272,16 +272,16 @@
 					}
 				}
 
-				.dropbtn{
+				.dropbtn {
 					transform: rotate(0deg);
-					transition: .2s ease-in;
+					transition: 0.2s ease-in;
 					padding: 10px;
 					border-radius: 50px;
-					&.rotate{
-						transition: .2s ease-in;
+					&.rotate {
+						transition: 0.2s ease-in;
 						transform: rotate(180deg);
 					}
-					&:active{
+					&:active {
 						background: $main-title-color-opacity;
 					}
 				}
@@ -302,7 +302,7 @@
 	.burger-align {
 		display: none;
 	}
-	.mobile_wrapp{
+	.mobile_wrapp {
 		display: block;
 		position: fixed;
 		height: 100%;
@@ -333,14 +333,14 @@
 			li {
 				padding: 10px 0;
 
-				@media only screen and (max-width: 500px){
+				@media only screen and (max-width: 500px) {
 					padding: 7.5px 0;
-					@media only screen and (max-width: 375px){
+					@media only screen and (max-width: 375px) {
 						padding: 7.5px 0;
-						@media only screen and (max-width: 375px) and (max-height: 700px){
+						@media only screen and (max-width: 375px) and (max-height: 700px) {
 							padding: 5px 0;
 						}
-					}	
+					}
 				}
 			}
 			a {
@@ -349,7 +349,6 @@
 				display: block;
 				width: 100%;
 			}
-			
 		}
 		.mobile_menu_contacts {
 			padding: 20px 0;
@@ -371,7 +370,7 @@
 		height: 0;
 		z-index: 0;
 		opacity: 0;
-		transition: opacity .6s ease;
+		transition: opacity 0.6s ease;
 	}
 	.work {
 		display: flex;
@@ -397,13 +396,6 @@
 		.header_wrapper {
 			justify-content: space-between;
 			width: 100%;
-
-			.header_wrappe_items {
-				display: none;
-			}
-			.burger-align {
-				display: block;
-			}
 		}
 	}
 
@@ -417,10 +409,9 @@
 		height: 100vh;
 		transition: opacity 1s ease;
 		opacity: 1;
-
 	}
 	.header.active .mobile_menu {
-		transition: bottom .3s linear;
+		transition: bottom 0.3s linear;
 		left: 0;
 		bottom: -5%;
 		width: 95%;
@@ -429,8 +420,26 @@
 		display: flex;
 		opacity: 1;
 	}
+	.menu_list {
+		gap: 10px !important;
+	}
+	.header_wrappe_items {
+		gap: 0 !important;
+	}
 }
-@media only screen and (max-width: 768px){
+
+@media only screen and (max-width: 1150px) {
+	.header {
+		.header_wrappe_items {
+			display: none !important;
+		}
+		.burger-align {
+			display: block;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
 	.header.active .mobile_menu {
 		width: 93%;
 	}
@@ -447,17 +456,17 @@
 		img {
 			width: 85% !important;
 		}
-		.mobile_menu{
+		.mobile_menu {
 			width: 87% !important;
-			height: 80vh !important;
+			height: 85vh !important;
 			.btn_wrapper_regular {
 				width: 100% !important;
 			}
-			.icon_cancel{
+			.icon_cancel {
 				width: 15px;
 				height: 15px;
 			}
-			ul{
+			ul {
 				padding-bottom: 5px;
 			}
 			.mobile_menu_contacts {
@@ -466,12 +475,18 @@
 					font-size: 20px !important;
 					padding-bottom: 10px;
 				}
-			 }
+			}
 		}
 
 		#simply-burger {
 			width: 44px;
 			height: 23px;
 		}
+	}
+}
+@media only screen and (max-height: 700px) {
+	.mobile_menu {
+		width: 87% !important;
+		height: 75vh !important;
 	}
 }

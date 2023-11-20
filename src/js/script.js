@@ -8,6 +8,9 @@ $(document).ready(function () {
 	$('.mobile_menu .icon_cancel').click(function () {
 		closeMenu();
 	});
+	$('.background-opacity-mobile').click(function () {
+		closeMenu();
+	});
 
 	// Handle form call open and close
 	$('[data-action="open-form-call"]').click(function (event) {
