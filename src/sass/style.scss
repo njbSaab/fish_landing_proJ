@@ -8,7 +8,14 @@
 	width: 5px; /* ширина скроллбара */
 	background: transparent; /* фон скроллбара (прозрачный) */
 }
-
+.cards::-webkit-scrollbar {
+	width: 5px; /* ширина скроллбара */
+	background: transparent; /* фон скроллбара (прозрачный) */
+}
+.cards::-webkit-scrollbar-thumb {
+	background-color: transparent; /* цвет тумблера */
+	border-radius: 5px; /* закругление углов */
+}
 /* Стилизация для тумблера скроллбара */
 ::-webkit-scrollbar-thumb {
 	background-color: #009de2; /* цвет тумблера */
@@ -19,6 +26,7 @@ ul::-webkit-scrollbar-thumb {
 	background-color: transparent; /* цвет тумблера */
 	border-radius: 5px; /* закругление углов */
 }
+
 /* Стилизация для тумблера при наведении */
 
 * {

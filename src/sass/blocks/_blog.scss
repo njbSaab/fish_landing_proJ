@@ -139,8 +139,9 @@
 					top: 10%;
 					left: 3%;
 					p {
-						text-align: left;
+						text-align: justify;
 						font-size: 14px;
+						max-width: 98%;
 						@media (max-width: 600px) {
 							font-size: 13px;
 							overflow: hidden;
